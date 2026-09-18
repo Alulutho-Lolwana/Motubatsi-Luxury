@@ -1,109 +1,312 @@
 <!DOCTYPE html>
+<!-- Declares this document as an HTML5 document. -->
 <html lang="en">
+<!-- Opens the HTML document and specifies English as the page language. -->
+
 <head>
+    <!-- Opens the head section containing metadata and linked resources. -->
+
     <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8 for correct display of text and symbols. -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive by matching the viewport width to the device width. -->
+
     <meta name="description" content="Explore Motubatsi Luxury's Basotho-inspired collections.">
+    <!-- Provides a short description of the Products page for search engines and previews. -->
+
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Links the Products page to the main Motubatsi Luxury stylesheet. -->
+
     <title>Motubatsi Luxury | Products</title>
+    <!-- Sets the title displayed in the browser tab. -->
+
 </head>
+<!-- Closes the head section. -->
+
 <body>
+<!-- Opens the visible content of the webpage. -->
 
     <header class="site-header">
+        <!-- Creates the main website header. -->
+
         <div class="navbar">
+            <!-- Wraps the website navigation bar. -->
+
             <div class="nav-container">
+                <!-- Provides the layout container for the brand, navigation links, and mobile menu button. -->
+
                 <a href="../index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <!-- Creates the clickable Motubatsi Luxury brand/logo. -->
+                <!-- The href points back to the website home page. -->
+                <!-- The span allows "Luxury" to be styled separately. -->
+
                 <nav>
+                    <!-- Defines the main navigation area. -->
+
                     <ul class="nav-links">
+                        <!-- Creates an unordered list containing the site's navigation links. -->
+
                         <li><a href="../index.html">Home</a></li>
+                        <!-- Creates a navigation item linking to the home page. -->
+
                         <li><a href="./about.html">About Us</a></li>
+                        <!-- Creates a navigation item linking to the About Us page. -->
+
                         <li><a href="./our-story.html">Our Story</a></li>
+                        <!-- Creates a navigation item linking to the Our Story page. -->
+
                         <li><a href="./product.html" class="active">Products</a></li>
+                        <!-- Creates a navigation item linking to the current Products page. -->
+                        <!-- The active class identifies the current page in the navigation. -->
+
                         <li><a href="./catalog.html">Catalog</a></li>
+                        <!-- Creates a navigation item linking to the Catalog page. -->
+
                         <li><a href="./enquiry.html">Enquiry</a></li>
+                        <!-- Creates a navigation item linking to the Enquiry page. -->
+
                         <li><a href="./contact.html">Contact</a></li>
+                        <!-- Creates a navigation item linking to the Contact page. -->
+
                     </ul>
+                    <!-- Closes the navigation list. -->
+
                 </nav>
+                <!-- Closes the navigation area. -->
+
                 <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <!-- Creates the button used to toggle the navigation on smaller screens. -->
+                <!-- aria-label provides an accessible description for screen readers. -->
+                <!-- &#9776; displays the hamburger menu symbol. -->
+
             </div>
+            <!-- Closes the navigation container. -->
+
         </div>
+        <!-- Closes the navigation bar. -->
+
     </header>
+    <!-- Closes the website header. -->
 
     <main>
+        <!-- Opens the main content area of the Products page. -->
+
         <section>
+            <!-- Creates the introductory Products section. -->
+
             <div class="container section-header">
+                <!-- Creates a centered and constrained container for the introduction. -->
+
                 <p class="section-eyebrow">Motubatsi Luxury</p>
+                <!-- Displays the small introductory label above the main heading. -->
+
                 <h1 class="section-title">Our Products</h1>
+                <!-- Displays the main heading of the Products page. -->
+
                 <p class="section-text">
+                    <!-- Starts the introductory description paragraph. -->
+
                     Discover our collection of contemporary pieces inspired by Basotho culture. Each
+                    <!-- Introduces the collection and its cultural inspiration. -->
+
                     collection combines traditional influences with a sophisticated modern aesthetic.
+                    <!-- Explains how traditional influences are combined with contemporary styling. -->
+
                 </p>
+                <!-- Closes the introductory paragraph. -->
+
             </div>
+            <!-- Closes the introductory content container. -->
+
         </section>
+        <!-- Closes the introductory section. -->
 
         <section class="bg-dark">
+            <!-- Creates a dark-background section containing the product cards. -->
+
             <div class="container card-grid">
+                <!-- Creates a responsive grid layout for the product cards. -->
+
                 <div class="card">
+                    <!-- Creates the first product card. -->
+
                     <div class="card-image">
+                        <!-- Creates the image area of the first product card. -->
+
                         <img src="../assets/images/mokorotlo.jpeg" alt="Heritage Dress">
+                        <!-- Displays the Heritage Dress image. -->
+                        <!-- src specifies the location of the image file. -->
+                        <!-- alt provides alternative text for accessibility and when the image cannot load. -->
+
                     </div>
+                    <!-- Closes the first product image container. -->
+
                     <div class="card-content">
+                        <!-- Contains the text and enquiry link for the first product. -->
+
                         <h3>Heritage Dress</h3>
+                        <!-- Displays the product name. -->
+
                         <p>A contemporary statement piece inspired by Basotho heritage and designed for elegant occasions.</p>
+                        <!-- Provides a short description of the Heritage Dress. -->
+
                         <a href="enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        <!-- Creates a styled link that takes the visitor to the product enquiry page. -->
+                        <!-- btn and btn-outline apply the site's button styles. -->
+                        <!-- mt-2 adds the spacing utility defined by the stylesheet. -->
+
                     </div>
+                    <!-- Closes the first product card content. -->
+
                 </div>
+                <!-- Closes the first product card. -->
 
                 <div class="card">
+                    <!-- Creates the second product card. -->
+
                     <div class="card-image">
+                        <!-- Creates the image area of the second product card. -->
+
                         <img src="../assets/images/founder.jpeg" alt="Luxury Heritage Jacket">
+                        <!-- Displays the image used for the Luxury Heritage Jacket. -->
+                        <!-- alt describes the image for accessibility. -->
+
                     </div>
+                    <!-- Closes the second product image container. -->
+
                     <div class="card-content">
+                        <!-- Contains the text and enquiry link for the second product. -->
+
                         <h3>Luxury Heritage Jacket</h3>
+                        <!-- Displays the product name. -->
+
                         <p>A sophisticated jacket combining modern tailoring with subtle Basotho-inspired elements.</p>
+                        <!-- Provides a short description of the Luxury Heritage Jacket. -->
+
                         <a href="enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        <!-- Creates a styled link to the product enquiry page. -->
+
                     </div>
+                    <!-- Closes the second product card content. -->
+
                 </div>
+                <!-- Closes the second product card. -->
 
                 <div class="card">
+                    <!-- Creates the third product card. -->
+
                     <div class="card-image">
+                        <!-- Creates the image area of the third product card. -->
+
                         <img src="../assets/images/ceo.jpeg" alt="Basotho Blanket Collection">
+                        <!-- Displays the image used for the Basotho Blanket Collection. -->
+                        <!-- alt describes the image for accessibility. -->
+
                     </div>
+                    <!-- Closes the third product image container. -->
+
                     <div class="card-content">
+                        <!-- Contains the text and enquiry link for the third product. -->
+
                         <h3>Basotho Blanket Collection</h3>
+                        <!-- Displays the product name. -->
+
                         <p>Fashion pieces inspired by the iconic Basotho blanket and its connection to cultural identity.</p>
+                        <!-- Provides a short description of the Basotho Blanket Collection. -->
+
                         <a href="enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        <!-- Creates a styled link to the product enquiry page. -->
+
                     </div>
+                    <!-- Closes the third product card content. -->
+
                 </div>
+                <!-- Closes the third product card. -->
 
                 <div class="card">
+                    <!-- Creates the fourth product card. -->
+
                     <div class="card-image">
+                        <!-- Creates the image area of the fourth product card. -->
+
                         <img src="../assets/images/web-development.jpg" alt="Sotho Hat Collection">
+                        <!-- Displays the image used for the Sotho Hat Collection. -->
+                        <!-- alt describes the image for accessibility. -->
+
                     </div>
+                    <!-- Closes the fourth product image container. -->
+
                     <div class="card-content">
+                        <!-- Contains the text and enquiry link for the fourth product. -->
+
                         <h3>Sotho Hat Collection</h3>
+                        <!-- Displays the product name. -->
+
                         <p>Contemporary pieces inspired by the mokorotlo, a distinctive symbol of Basotho culture.</p>
+                        <!-- Provides a short description of the Sotho Hat Collection. -->
+
                         <a href="enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        <!-- Creates a styled link to the product enquiry page. -->
+
                     </div>
+                    <!-- Closes the fourth product card content. -->
+
                 </div>
+                <!-- Closes the fourth product card. -->
+
             </div>
+            <!-- Closes the product card grid. -->
+
         </section>
+        <!-- Closes the product collection section. -->
 
         <section class="text-center">
+            <!-- Creates a centered section encouraging visitors to browse the full catalog. -->
+
             <div class="container">
+                <!-- Creates a constrained container for the catalog call-to-action. -->
+
                 <h2 class="section-title">Browse The Full Catalog</h2>
+                <!-- Displays the heading for the catalog call-to-action. -->
+
                 <p class="section-text mb-2">See every collection, organised by category.</p>
+                <!-- Describes what visitors can find in the full catalog. -->
+                <!-- The mb-2 class applies bottom spacing using the site's utility styles. -->
+
                 <a href="./catalog.html" class="btn">View Catalog</a>
+                <!-- Creates a styled button link that takes visitors to the full Catalog page. -->
+
             </div>
+            <!-- Closes the catalog call-to-action container. -->
+
         </section>
+        <!-- Closes the catalog call-to-action section. -->
+
     </main>
+    <!-- Closes the main content area. -->
 
     <footer class="site-footer">
+        <!-- Creates the website footer. -->
+
         <div class="container footer-bottom">
+            <!-- Creates the footer content container. -->
+
             &copy; 2026 House of Motubatsi. All rights reserved.
+            <!-- Displays the copyright notice. -->
+            <!-- &copy; creates the copyright symbol. -->
+
         </div>
+        <!-- Closes the footer content container. -->
+
     </footer>
+    <!-- Closes the website footer. -->
 
     <script src="../assets/js/main.js"></script>
+    <!-- Loads the site's JavaScript file for interactive functionality such as mobile navigation. -->
+
 </body>
+<!-- Closes the body containing the visible webpage content. -->
+
 </html>
+<!-- Closes the HTML document. -->
