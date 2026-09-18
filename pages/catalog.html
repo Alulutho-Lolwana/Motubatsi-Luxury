@@ -1,249 +1,406 @@
 <!DOCTYPE html>
+<!-- Defines this document as an HTML5 document. -->
 <html lang="en">
+<!-- Opens the HTML document and declares English as the page language. -->
+
 <head>
+    <!-- Opens the document head, which contains page metadata and resources. -->
     <meta charset="UTF-8">
+    <!-- Sets UTF-8 character encoding for correct text display. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the layout responsive to the device screen width. -->
     <meta name="description" content="Browse the full Motubatsi Luxury catalog — Basotho-inspired dresses, jackets, blankets and headwear.">
+    <!-- Provides a search-engine and page-preview description. -->
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Links this page to the site's main CSS stylesheet. -->
     <title>Motubatsi Luxury | Catalog</title>
-    <style>
-        .category-nav {
-            position: sticky;
-            top: 0;
-            z-index: 900;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 18px 0;
-            background: rgba(11, 11, 11, 0.96);
-            border-bottom: 1px solid var(--border);
-        }
-        .category-nav a {
-            padding: 8px 18px;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--cream);
-            transition: background var(--transition), color var(--transition), border-color var(--transition);
-        }
-        .category-nav a:hover {
-            background: var(--gold);
-            color: var(--black);
-            border-color: var(--gold);
-        }
-        .catalog-category {
-            scroll-margin-top: 70px;
-        }
-        .price-tag {
-            display: inline-block;
-            margin: 6px 0 14px;
-            color: var(--gold-light);
-            font-family: var(--font-display);
-            font-size: 20px;
-        }
-    </style>
+    <!-- Sets the title shown in the browser tab. -->
 </head>
+<!-- Closes the document head. -->
+
 <body>
+    <!-- Opens the visible webpage content. -->
 
     <header class="site-header">
+        <!-- Creates the main website header. -->
         <div class="navbar">
+            <!-- Creates the navigation bar wrapper. -->
             <div class="nav-container">
+                <!-- Provides the responsive container for navigation elements. -->
                 <a href="../index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <!-- Creates the clickable Motubatsi Luxury brand logo. -->
                 <nav>
+                    <!-- Opens the primary navigation area. -->
                     <ul class="nav-links">
+                        <!-- Creates the unordered list containing navigation links. -->
                         <li><a href="../index.html">Home</a></li>
+                        <!-- Creates the Home navigation link. -->
                         <li><a href="./about.html">About Us</a></li>
+                        <!-- Creates the About Us navigation link. -->
                         <li><a href="./our-story.html">Our Story</a></li>
+                        <!-- Creates the Our Story navigation link. -->
                         <li><a href="./product.html">Products</a></li>
+                        <!-- Creates the Products navigation link. -->
                         <li><a href="./catalog.html" class="active">Catalog</a></li>
+                        <!-- Creates the active Catalog navigation link. -->
                         <li><a href="./enquiry.html">Enquiry</a></li>
+                        <!-- Creates the Enquiry navigation link. -->
                         <li><a href="./contact.html">Contact</a></li>
+                        <!-- Creates the Contact navigation link. -->
                     </ul>
+                    <!-- Closes the navigation link list. -->
                 </nav>
+                <!-- Closes the primary navigation area. -->
                 <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <!-- Creates the mobile hamburger menu button with an accessible label. -->
             </div>
+            <!-- Closes the navigation container. -->
         </div>
+        <!-- Closes the navbar wrapper. -->
     </header>
+    <!-- Closes the website header. -->
 
     <nav class="category-nav" aria-label="Catalog categories">
+        <!-- Creates a secondary navigation menu for jumping between catalog categories. -->
         <a href="#dresses">Dresses</a>
+        <!-- Links directly to the Dresses catalog section. -->
         <a href="#jackets">Jackets</a>
+        <!-- Links directly to the Jackets catalog section. -->
         <a href="#blankets">Blankets &amp; Wraps</a>
+        <!-- Links directly to the Blankets & Wraps catalog section. -->
         <a href="#headwear">Headwear</a>
+        <!-- Links directly to the Headwear catalog section. -->
     </nav>
+    <!-- Closes the catalog category navigation. -->
 
     <main>
+        <!-- Opens the main content area of the catalog page. -->
+
         <section>
+            <!-- Creates the introductory catalog section. -->
             <div class="container section-header">
+                <!-- Centers and constrains the introductory content. -->
                 <p class="section-eyebrow">Full Catalog</p>
+                <!-- Displays the small section label. -->
                 <h1 class="section-title">Our Collections</h1>
+                <!-- Displays the main catalog page heading. -->
                 <p class="section-text">
+                    <!-- Opens the catalog introduction paragraph. -->
                     Every piece in the Motubatsi Luxury catalog is Basotho-inspired and finished with
                     modern, luxury detailing. Prices are available on enquiry — select a piece below and
                     our team will get back to you with full details.
+                    <!-- Provides an explanation of the catalog and enquiry process. -->
                 </p>
+                <!-- Closes the catalog introduction paragraph. -->
             </div>
+            <!-- Closes the introductory content container. -->
         </section>
+        <!-- Closes the introductory catalog section. -->
 
-        <!-- Dresses -->
+        <!-- Begins the Dresses catalog category. -->
         <section id="dresses" class="catalog-category bg-dark">
+            <!-- Creates the Dresses section with a dark background. -->
             <div class="container">
+                <!-- Centers and constrains the Dresses content. -->
                 <div class="section-header">
+                    <!-- Creates the Dresses section heading area. -->
                     <p class="section-eyebrow">Category</p>
+                    <!-- Displays the category label. -->
                     <h2 class="section-title">Dresses</h2>
+                    <!-- Displays the Dresses heading. -->
                 </div>
+                <!-- Closes the Dresses heading area. -->
+
                 <div class="card-grid">
+                    <!-- Creates the responsive grid containing dress cards. -->
                     <div class="card">
+                        <!-- Creates the Heritage Dress product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/mokorotlo.jpeg" alt="Heritage Dress">
+                            <!-- Displays the Heritage Dress image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Heritage Dress</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A contemporary statement piece inspired by Basotho heritage, designed for elegant occasions.</p>
+                            <!-- Describes the Heritage Dress. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Heritage Dress card. -->
 
                     <div class="card">
+                        <!-- Creates the Mokorotlo Evening Gown product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/founder.jpeg" alt="Mokorotlo Evening Gown">
+                            <!-- Displays the evening gown image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Mokorotlo Evening Gown</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A floor-length gown with subtle mokorotlo-inspired silhouette lines, for formal events.</p>
+                            <!-- Describes the evening gown. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Mokorotlo Evening Gown card. -->
 
                     <div class="card">
+                        <!-- Creates the Heritage Wrap Dress product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/ceo.jpeg" alt="Heritage Wrap Dress">
+                            <!-- Displays the wrap dress image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Heritage Wrap Dress</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A versatile wrap-style dress finished with hand-stitched detailing.</p>
+                            <!-- Describes the wrap dress. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Heritage Wrap Dress card. -->
                 </div>
+                <!-- Closes the Dresses card grid. -->
             </div>
+            <!-- Closes the Dresses container. -->
         </section>
+        <!-- Closes the Dresses catalog category. -->
 
-        <!-- Jackets -->
+        <!-- Begins the Jackets catalog category. -->
         <section id="jackets" class="catalog-category">
+            <!-- Creates the Jackets section. -->
             <div class="container">
+                <!-- Centers and constrains the Jackets content. -->
                 <div class="section-header">
+                    <!-- Creates the Jackets heading area. -->
                     <p class="section-eyebrow">Category</p>
+                    <!-- Displays the category label. -->
                     <h2 class="section-title">Jackets</h2>
+                    <!-- Displays the Jackets heading. -->
                 </div>
+                <!-- Closes the Jackets heading area. -->
+
                 <div class="card-grid">
+                    <!-- Creates the responsive grid containing jacket cards. -->
                     <div class="card">
+                        <!-- Creates the Luxury Heritage Jacket product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/founder-ceo.jpeg" alt="Luxury Heritage Jacket">
+                            <!-- Displays the jacket image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Luxury Heritage Jacket</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A sophisticated jacket combining modern tailoring with subtle Basotho-inspired elements.</p>
+                            <!-- Describes the jacket. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Luxury Heritage Jacket card. -->
 
                     <div class="card">
+                        <!-- Creates the Structured Blazer product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/mokorotlo.jpeg" alt="Structured Blazer">
+                            <!-- Displays the blazer image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Structured Blazer</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A tailored blazer with a Basotho blanket-inspired lining, made for statement dressing.</p>
+                            <!-- Describes the blazer. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Structured Blazer card. -->
                 </div>
+                <!-- Closes the Jackets card grid. -->
             </div>
+            <!-- Closes the Jackets container. -->
         </section>
+        <!-- Closes the Jackets catalog category. -->
 
-        <!-- Blankets & Wraps -->
+        <!-- Begins the Blankets & Wraps catalog category. -->
         <section id="blankets" class="catalog-category bg-dark">
+            <!-- Creates the Blankets & Wraps section with a dark background. -->
             <div class="container">
+                <!-- Centers and constrains the category content. -->
                 <div class="section-header">
+                    <!-- Creates the category heading area. -->
                     <p class="section-eyebrow">Category</p>
+                    <!-- Displays the category label. -->
                     <h2 class="section-title">Blankets &amp; Wraps</h2>
+                    <!-- Displays the category heading. -->
                 </div>
+                <!-- Closes the category heading area. -->
+
                 <div class="card-grid">
+                    <!-- Creates the responsive grid containing blanket and wrap cards. -->
                     <div class="card">
+                        <!-- Creates the Basotho Blanket Collection card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/ceo.jpeg" alt="Basotho Blanket Collection">
+                            <!-- Displays the blanket collection image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Basotho Blanket Collection</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>Fashion pieces inspired by the iconic Basotho blanket and its connection to cultural identity.</p>
+                            <!-- Describes the blanket collection. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Basotho Blanket Collection card. -->
 
                     <div class="card">
+                        <!-- Creates the Luxury Shawl product card. -->
                         <div class="card-image">
+                            <!-- Creates the product image container. -->
                             <img src="../assets/images/founder.jpeg" alt="Luxury Shawl">
+                            <!-- Displays the shawl image with alternative text. -->
                         </div>
+                        <!-- Closes the product image container. -->
                         <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
                             <h3>Luxury Shawl</h3>
+                            <!-- Displays the product name. -->
                             <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
                             <p>A lightweight shawl reworking traditional Basotho blanket patterns for everyday luxury.</p>
+                            <!-- Describes the shawl. -->
                             <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
                         </div>
+                        <!-- Closes the product card content. -->
                     </div>
+                    <!-- Closes the Luxury Shawl card. -->
                 </div>
+                <!-- Closes the Blankets & Wraps card grid. -->
             </div>
+            <!-- Closes the category container. -->
         </section>
+        <!-- Closes the Blankets & Wraps category. -->
 
-        <!-- Headwear -->
+        <!-- Begins the Headwear catalog category. -->
         <section id="headwear" class="catalog-category">
+            <!-- Creates the Headwear section. -->
             <div class="container">
+                <!-- Centers and constrains the Headwear content. -->
                 <div class="section-header">
+                    <!-- Creates the Headwear heading area. -->
                     <p class="section-eyebrow">Category</p>
+                    <!-- Displays the category label. -->
                     <h2 class="section-title">Headwear</h2>
+                    <!-- Displays the Headwear heading. -->
                 </div>
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="../assets/images/web-development.jpg" alt="Sotho Hat Collection">
-                        </div>
-                        <div class="card-content">
-                            <h3>Sotho Hat Collection</h3>
-                            <span class="price-tag">Enquire for pricing</span>
-                            <p>Contemporary pieces inspired by the mokorotlo, a distinctive symbol of Basotho culture.</p>
-                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- Closes the Headwear heading area. -->
 
-        <section class="text-center" style="padding-top: 60px;">
-            <div class="container">
-                <h2 class="section-title">Don't See What You're Looking For?</h2>
-                <p class="section-text mb-2">We also take custom, made-to-order pieces for special occasions.</p>
-                <a href="./enquiry.html" class="btn">Request a Custom Piece</a>
+                <div class="card-grid">
+                    <!-- Creates the responsive grid containing headwear cards. -->
+                    <div class="card">
+                        <!-- Creates the Sotho Hat Collection product card. -->
+                        <div class="card-image">
+                            <!-- Creates the product image container. -->
+                            <img src="../assets/images/web-development.jpg" alt="Sotho Hat Collection">
+                            <!-- Displays the Sotho Hat Collection image with alternative text. -->
+                        </div>
+                        <!-- Closes the product image container. -->
+                        <div class="card-content">
+                            <!-- Creates the text and button area of the product card. -->
+                            <h3>Sotho Hat Collection</h3>
+                            <!-- Displays the product name. -->
+                            <span class="price-tag">Enquire for pricing</span>
+                            <!-- Displays the product pricing instruction. -->
+                            <p>Contemporary pieces inspired by the mokorotlo, a distinctive symbol of Basotho culture.</p>
+                            <!-- Describes the Sotho Hat Collection. -->
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                            <!-- Creates a button linking to the enquiry page. -->
+                        </div>
+                        <!-- Closes the product card content. -->
+                    </div>
+                    <!-- Closes the Sotho Hat Collection card. -->
+                </div>
+                <!-- Closes the Headwear card grid. -->
             </div>
+            <!-- Closes the Headwear container. -->
         </section>
+        <!-- Closes the Headwear category. -->
+
+        <!-- Begins the custom-order call-to-action section. -->
+        <section class="text-center" style="padding-top: 60px;">
+            <!-- Creates a centered section with reduced top padding. -->
+            <div class="container">
+                <!-- Centers and constrains the call-to-action content. -->
+                <h2 class="section-title">Don't See What You're Looking For?</h2>
+                <!-- Displays the custom-piece prompt. -->
+                <p class="section-text mb-2">We also take custom, made-to-order pieces for special occasions.</p>
+                <!-- Explains that custom pieces are available. -->
+                <a href="./enquiry.html" class="btn">Request a Custom Piece</a>
+                <!-- Creates a button linking to the enquiry page for custom requests. -->
+            </div>
+            <!-- Closes the call-to-action container. -->
+        </section>
+        <!-- Closes the custom-order call-to-action section. -->
     </main>
+    <!-- Closes the main page content. -->
 
     <footer class="site-footer">
+        <!-- Creates the website footer. -->
         <div class="container footer-bottom">
+            <!-- Centers the footer content and applies footer styling. -->
             &copy; 2026 House of Motubatsi. All rights reserved.
+            <!-- Displays the copyright notice. -->
         </div>
+        <!-- Closes the footer content container. -->
     </footer>
+    <!-- Closes the website footer. -->
 
     <script src="../assets/js/main.js"></script>
+    <!-- Loads the JavaScript file responsible for interactive website behavior. -->
 </body>
+<!-- Closes the visible page content. -->
 </html>
+<!-- Closes the HTML document. -->
