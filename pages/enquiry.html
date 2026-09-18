@@ -1,103 +1,294 @@
 <!DOCTYPE html>
+<!-- Declares this document as an HTML5 document. -->
 <html lang="en">
+<!-- Opens the HTML document and specifies English as the page language. -->
+
 <head>
+    <!-- Opens the head section, which contains page metadata and linked resources. -->
+
     <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8 for correct text rendering. -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive by matching the viewport width to the device width. -->
+
     <meta name="description" content="Send a product enquiry to Motubatsi Luxury.">
+    <!-- Provides a short description of the page for search engines and previews. -->
+
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Links the page to the main Motubatsi Luxury CSS stylesheet. -->
+
     <title>Motubatsi Luxury | Enquiry</title>
+    <!-- Sets the title shown in the browser tab. -->
 </head>
+<!-- Closes the head section. -->
+
 <body>
+<!-- Opens the visible content of the webpage. -->
 
     <header class="site-header">
+        <!-- Creates the main website header. -->
+
         <div class="navbar">
+            <!-- Wraps the navigation bar and its contents. -->
+
             <div class="nav-container">
+                <!-- Provides the layout container for the brand, navigation, and mobile menu button. -->
+
                 <a href="../index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <!-- Creates the clickable Motubatsi Luxury brand/logo. -->
+                <!-- The href sends users to the main home page. -->
+                <!-- The span allows the word "Luxury" to receive separate styling. -->
+
                 <nav>
+                    <!-- Defines the main navigation area. -->
+
                     <ul class="nav-links">
+                        <!-- Creates an unordered list containing the site's navigation links. -->
+
                         <li><a href="../index.html">Home</a></li>
+                        <!-- Creates a navigation item linking to the home page. -->
+
                         <li><a href="./about.html">About Us</a></li>
+                        <!-- Creates a navigation item linking to the About Us page. -->
+
                         <li><a href="./our-story.html">Our Story</a></li>
+                        <!-- Creates a navigation item linking to the Our Story page. -->
+
                         <li><a href="./product.html">Products</a></li>
+                        <!-- Creates a navigation item linking to the Products page. -->
+
                         <li><a href="./catalog.html">Catalog</a></li>
+                        <!-- Creates a navigation item linking to the Catalog page. -->
+
                         <li><a href="./enquiry.html" class="active">Enquiry</a></li>
+                        <!-- Creates a navigation item linking to the current Enquiry page. -->
+                        <!-- The active class identifies the current page in the navigation. -->
+
                         <li><a href="./contact.html">Contact</a></li>
+                        <!-- Creates a navigation item linking to the Contact page. -->
+
                     </ul>
+                    <!-- Closes the navigation list. -->
+
                 </nav>
+                <!-- Closes the navigation area. -->
+
                 <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <!-- Creates the button used to toggle mobile navigation. -->
+                <!-- aria-label gives the button an accessible description for screen readers. -->
+                <!-- &#9776; displays the hamburger menu symbol. -->
+
             </div>
+            <!-- Closes the navigation container. -->
+
         </div>
+        <!-- Closes the navigation bar. -->
+
     </header>
+    <!-- Closes the website header. -->
 
     <main>
+        <!-- Opens the main content area of the enquiry page. -->
+
         <section>
+            <!-- Creates the introductory section for the product enquiry form. -->
+
             <div class="container section-header">
+                <!-- Creates a centered, constrained container for the section introduction. -->
+
                 <p class="section-eyebrow">Begin Your Motubatsi Luxury Experience</p>
+                <!-- Displays the small introductory label above the main heading. -->
+
                 <h1 class="section-title">Product Enquiry</h1>
+                <!-- Displays the main heading of the page. -->
+
                 <p class="section-text">
+                    <!-- Starts the introductory description paragraph. -->
+
                     Interested in one of our pieces? Complete the form below and our team will respond
+                    <!-- Explains what visitors should do to enquire about a product. -->
+
                     with more information about your selected product.
+                    <!-- Explains that the team will provide additional product information. -->
+
                 </p>
+                <!-- Closes the introductory paragraph. -->
+
             </div>
+            <!-- Closes the introductory section container. -->
+
         </section>
+        <!-- Closes the introductory section. -->
 
         <section class="contact">
+            <!-- Creates the section containing the product enquiry form. -->
+
             <div class="container" style="max-width: 700px;">
+                <!-- Creates a centered content container with a maximum width of 700 pixels. -->
+                <!-- The inline style limits the width of the enquiry form for easier reading. -->
+
                 <form class="contact-form" action="#" method="post">
+                    <!-- Creates the product enquiry form. -->
+                    <!-- The contact-form class applies the site's form styling. -->
+                    <!-- action="#" currently points the form submission back to the current page. -->
+                    <!-- method="post" sends form data using the HTTP POST method. -->
+
                     <div class="form-group">
+                        <!-- Groups the full-name label and input field together. -->
+
                         <label for="name">Full Name</label>
+                        <!-- Labels the name input field. -->
+                        <!-- The for attribute connects this label to the input with id="name". -->
+
                         <input type="text" id="name" name="name" required>
+                        <!-- Creates a required text input for the customer's full name. -->
+                        <!-- id uniquely identifies the field and connects it to the label. -->
+                        <!-- name identifies the field when form data is submitted. -->
+                        <!-- required prevents submission until a value is entered. -->
+
                     </div>
+                    <!-- Closes the full-name form group. -->
 
                     <div class="form-group">
+                        <!-- Groups the email label and input field together. -->
+
                         <label for="email">Email Address</label>
+                        <!-- Labels the email input field. -->
+
                         <input type="email" id="email" name="email" required>
+                        <!-- Creates a required email input. -->
+                        <!-- type="email" enables browser validation for a standard email format. -->
+
                     </div>
+                    <!-- Closes the email form group. -->
 
                     <div class="form-group">
+                        <!-- Groups the phone label and input field together. -->
+
                         <label for="phone">Phone Number</label>
+                        <!-- Labels the phone-number input field. -->
+
                         <input type="tel" id="phone" name="phone">
+                        <!-- Creates a telephone-number input field. -->
+                        <!-- This field is optional because it does not contain the required attribute. -->
+
                     </div>
+                    <!-- Closes the phone form group. -->
 
                     <div class="form-group">
+                        <!-- Groups the product label and selection menu together. -->
+
                         <label for="product">Product</label>
+                        <!-- Labels the product selection dropdown. -->
+
                         <select id="product" name="product" required>
+                            <!-- Creates a required dropdown for choosing a product. -->
+
                             <option value="">Select a product</option>
+                            <!-- Provides the initial empty product selection. -->
+
                             <option value="heritage-dress">Heritage Dress</option>
+                            <!-- Adds the Heritage Dress as a selectable product. -->
+
                             <option value="heritage-jacket">Luxury Heritage Jacket</option>
+                            <!-- Adds the Luxury Heritage Jacket as a selectable product. -->
+
                             <option value="blanket">Basotho Blanket Collection</option>
+                            <!-- Adds the Basotho Blanket Collection as a selectable product. -->
+
                             <option value="sotho-hat">Sotho Hat Collection</option>
+                            <!-- Adds the Sotho Hat Collection as a selectable product. -->
+
                         </select>
+                        <!-- Closes the product selection dropdown. -->
+
                     </div>
+                    <!-- Closes the product form group. -->
 
                     <div class="form-group">
+                        <!-- Groups the size label and selection menu together. -->
+
                         <label for="size">Size</label>
+                        <!-- Labels the size selection dropdown. -->
+
                         <select id="size" name="size">
+                            <!-- Creates a dropdown for selecting a product size. -->
+                            <!-- This field is optional because it does not have the required attribute. -->
+
                             <option value="">Select a size</option>
+                            <!-- Provides the initial empty size selection. -->
+
                             <option>Small</option>
+                            <!-- Adds Small as a selectable size. -->
+
                             <option>Medium</option>
+                            <!-- Adds Medium as a selectable size. -->
+
                             <option>Large</option>
+                            <!-- Adds Large as a selectable size. -->
+
                             <option>Extra Large</option>
+                            <!-- Adds Extra Large as a selectable size. -->
+
                         </select>
+                        <!-- Closes the size selection dropdown. -->
+
                     </div>
+                    <!-- Closes the size form group. -->
 
                     <div class="form-group">
+                        <!-- Groups the enquiry/message label and text area together. -->
+
                         <label for="message">Enquiry / Message</label>
+                        <!-- Labels the message text area. -->
+
                         <textarea id="message" name="message" rows="6" required></textarea>
+                        <!-- Creates a required multi-line message field. -->
+                        <!-- rows="6" gives the text area an initial height of approximately six lines. -->
+
                     </div>
+                    <!-- Closes the message form group. -->
 
                     <button type="submit" class="btn">Submit Enquiry</button>
+                    <!-- Creates the form submission button. -->
+                    <!-- type="submit" tells the browser to submit the form when clicked. -->
+                    <!-- The btn class applies the website's button styling. -->
+
                 </form>
+                <!-- Closes the product enquiry form. -->
+
             </div>
+            <!-- Closes the form container. -->
+
         </section>
+        <!-- Closes the enquiry section. -->
+
     </main>
+    <!-- Closes the main content area. -->
 
     <footer class="site-footer">
+        <!-- Creates the website footer. -->
+
         <div class="container footer-bottom">
+            <!-- Creates the footer content container. -->
+
             &copy; 2026 House of Motubatsi. All rights reserved.
+            <!-- Displays the copyright notice. -->
+            <!-- &copy; produces the copyright symbol. -->
+
         </div>
+        <!-- Closes the footer content container. -->
+
     </footer>
+    <!-- Closes the website footer. -->
 
     <script src="../assets/js/main.js"></script>
+    <!-- Loads the site's JavaScript file. -->
+    <!-- This can provide interactive features such as the mobile navigation menu. -->
+
 </body>
+<!-- Closes the visible page body. -->
+
 </html>
+<!-- Closes the HTML document. -->
