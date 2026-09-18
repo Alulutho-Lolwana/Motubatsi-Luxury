@@ -1,150 +1,421 @@
 <!DOCTYPE html>
+<!-- Declares this document as an HTML5 document. -->
 <html lang="en">
+<!-- Opens the HTML document and specifies English as the page language. -->
+
 <head>
+    <!-- Opens the head section containing metadata and linked resources. -->
+
     <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8 so text and symbols display correctly. -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage responsive by matching the viewport width to the device width. -->
+
     <meta name="description" content="House of Motubatsi — a Basotho-inspired luxury fashion brand celebrating heritage, identity and modern elegance.">
+    <!-- Provides a description of the website for search engines and page previews. -->
+
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Links the home page to the main Motubatsi Luxury CSS stylesheet. -->
+
     <title>Motubatsi Luxury | Home</title>
+    <!-- Sets the title displayed in the browser tab. -->
+
 </head>
+<!-- Closes the head section. -->
+
 <body>
+<!-- Opens the visible content of the webpage. -->
 
     <header class="site-header">
+        <!-- Creates the main website header. -->
+
         <div class="navbar">
+            <!-- Wraps the navigation bar. -->
+
             <div class="nav-container">
+                <!-- Provides the layout container for the brand, navigation, and mobile menu button. -->
+
                 <a href="./index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <!-- Creates the clickable Motubatsi Luxury brand/logo. -->
+                <!-- The href links the brand back to the home page. -->
+                <!-- The span allows the word "Luxury" to receive separate styling. -->
 
                 <nav>
+                    <!-- Defines the primary navigation area of the website. -->
+
                     <ul class="nav-links">
+                        <!-- Creates an unordered list containing the website navigation links. -->
+
                         <li><a href="./index.html" class="active">Home</a></li>
+                        <!-- Creates the Home navigation item. -->
+                        <!-- The active class indicates that the current page is Home. -->
+
                         <li><a href="./pages/about.html">About Us</a></li>
+                        <!-- Creates a navigation item linking to the About Us page. -->
+
                         <li><a href="./pages/our-story.html">Our Story</a></li>
+                        <!-- Creates a navigation item linking to the Our Story page. -->
+
                         <li><a href="./pages/product.html">Products</a></li>
+                        <!-- Creates a navigation item linking to the Products page. -->
+
                         <li><a href="./pages/catalog.html">Catalog</a></li>
+                        <!-- Creates a navigation item linking to the Catalog page. -->
+
                         <li><a href="./pages/enquiry.html">Enquiry</a></li>
+                        <!-- Creates a navigation item linking to the Enquiry page. -->
+
                         <li><a href="./pages/contact.html">Contact Us</a></li>
+                        <!-- Creates a navigation item linking to the Contact Us page. -->
+
                     </ul>
+                    <!-- Closes the navigation list. -->
+
                 </nav>
+                <!-- Closes the navigation area. -->
 
                 <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <!-- Creates the mobile navigation toggle button. -->
+                <!-- aria-label gives the button an accessible description for screen readers. -->
+                <!-- &#9776; displays the hamburger menu symbol. -->
+
             </div>
+            <!-- Closes the navigation container. -->
+
         </div>
+        <!-- Closes the navigation bar. -->
+
     </header>
+    <!-- Closes the website header. -->
 
     <main>
+        <!-- Opens the main content area of the home page. -->
 
-        <!-- Hero -->
+        <!-- Hero section: the main introductory banner at the top of the page. -->
         <section class="hero">
+            <!-- Creates the large hero/banner section. -->
+
             <div class="hero-content">
+                <!-- Contains and positions the hero text and action buttons. -->
+
                 <p class="hero-eyebrow">Basotho Heritage &middot; Modern Luxury</p>
+                <!-- Displays the small introductory text above the hero heading. -->
+                <!-- &middot; creates a centered dot between the two phrases. -->
+
                 <h1>Motubatsi Luxury</h1>
+                <!-- Displays the main heading of the home page. -->
+
                 <p>
+                    <!-- Starts the main hero description. -->
+
                     A Basotho-inspired luxury fashion brand that celebrates heritage, identity and modern
+                    <!-- Introduces the brand and its main themes. -->
+
                     elegance — timeless designs blending traditional Basotho culture with contemporary style.
+                    <!-- Describes the combination of heritage and modern fashion. -->
+
                 </p>
+                <!-- Closes the hero description. -->
+
                 <a href="./pages/product.html" class="btn">Explore Collections</a>
+                <!-- Creates a primary button linking visitors to the Products page. -->
+
                 <a href="./pages/enquiry.html" class="btn btn-outline" style="margin-left: 14px;">Make an Enquiry</a>
-            </div>
-        </section>
+                <!-- Creates a secondary outlined button linking to the Enquiry page. -->
+                <!-- The inline margin-left adds 14 pixels of space between the two buttons. -->
 
-        <!-- About teaser -->
+            </div>
+            <!-- Closes the hero content container. -->
+
+        </section>
+        <!-- Closes the hero section. -->
+
+        <!-- About teaser: a short introduction to the brand's story. -->
         <section class="about">
-            <div class="container about-grid">
-                <div class="about-image">
-                    <img src="./assets/images/founder-ceo.jpeg" alt="Founder & CEO of Motubatsi Luxury">
-                </div>
-                <div class="about-content">
-                    <p class="section-eyebrow">Our Story</p>
-                    <h2>Heritage, Reimagined</h2>
-                    <p>
-                        House of Motubatsi is a Basotho-inspired luxury fashion brand that celebrates heritage,
-                        identity and modern elegance. We create timeless designs that blend traditional Basotho
-                        culture with contemporary style.
-                    </p>
-                    <p>
-                        Our brand represents pride, confidence, sophistication and appreciation for Basotho
-                        heritage — carried from the mountains of Lesotho onto the global stage.
-                    </p>
-                    <a href="./pages/about.html" class="btn btn-outline">Learn More</a>
-                </div>
-            </div>
-        </section>
+            <!-- Creates the About section on the home page. -->
 
-        <!-- Offerings -->
-        <section class="bg-dark">
-            <div class="container">
-                <div class="section-header">
-                    <p class="section-eyebrow">What We Offer</p>
-                    <h2 class="section-title">Crafted With Purpose</h2>
-                    <p class="section-text">
-                        Traditional craftsmanship, modern design and timeless quality — in every piece.
-                    </p>
+            <div class="container about-grid">
+                <!-- Creates a responsive grid containing the image and text. -->
+
+                <div class="about-image">
+                    <!-- Creates the image column of the About section. -->
+
+                    <img src="./assets/images/founder-ceo.jpeg" alt="Founder & CEO of Motubatsi Luxury">
+                    <!-- Displays the Founder and CEO image. -->
+                    <!-- src specifies the location of the image file. -->
+                    <!-- alt provides alternative text for accessibility and image-loading failures. -->
+
                 </div>
+                <!-- Closes the About image container. -->
+
+                <div class="about-content">
+                    <!-- Creates the text/content column of the About section. -->
+
+                    <p class="section-eyebrow">Our Story</p>
+                    <!-- Displays the small section label above the heading. -->
+
+                    <h2>Heritage, Reimagined</h2>
+                    <!-- Displays the About section heading. -->
+
+                    <p>
+                        <!-- Starts the first About paragraph. -->
+
+                        House of Motubatsi is a Basotho-inspired luxury fashion brand that celebrates heritage,
+                        <!-- Introduces the brand and its cultural focus. -->
+
+                        identity and modern elegance. We create timeless designs that blend traditional Basotho
+                        <!-- Explains the design philosophy of combining identity and elegance. -->
+
+                        culture with contemporary style.
+                        <!-- Completes the description of the design approach. -->
+
+                    </p>
+                    <!-- Closes the first About paragraph. -->
+
+                    <p>
+                        <!-- Starts the second About paragraph. -->
+
+                        Our brand represents pride, confidence, sophistication and appreciation for Basotho
+                        <!-- Lists qualities associated with the brand. -->
+
+                        heritage — carried from the mountains of Lesotho onto the global stage.
+                        <!-- Describes the brand's connection to Lesotho and its wider ambitions. -->
+
+                    </p>
+                    <!-- Closes the second About paragraph. -->
+
+                    <a href="./pages/about.html" class="btn btn-outline">Learn More</a>
+                    <!-- Creates a secondary button linking to the full About Us page. -->
+
+                </div>
+                <!-- Closes the About content container. -->
+
+            </div>
+            <!-- Closes the About grid. -->
+
+        </section>
+        <!-- Closes the About teaser section. -->
+
+        <!-- Offerings section: highlights the main things the brand provides. -->
+        <section class="bg-dark">
+            <!-- Creates a dark-background section for the offerings. -->
+
+            <div class="container">
+                <!-- Creates the main constrained content container. -->
+
+                <div class="section-header">
+                    <!-- Creates the heading area for the offerings section. -->
+
+                    <p class="section-eyebrow">What We Offer</p>
+                    <!-- Displays the small section label. -->
+
+                    <h2 class="section-title">Crafted With Purpose</h2>
+                    <!-- Displays the main heading for the offerings section. -->
+
+                    <p class="section-text">
+                        <!-- Starts the section description. -->
+
+                        Traditional craftsmanship, modern design and timeless quality — in every piece.
+                        <!-- Summarizes the qualities represented by the products. -->
+
+                    </p>
+                    <!-- Closes the section description. -->
+
+                </div>
+                <!-- Closes the offerings section header. -->
 
                 <div class="card-grid">
+                    <!-- Creates a responsive grid containing the three offering cards. -->
+
                     <div class="card">
+                        <!-- Creates the first offering card. -->
+
                         <div class="card-image">
+                            <!-- Creates the image area of the first card. -->
+
                             <img src="./assets/images/mokorotlo.jpeg" alt="Basotho-inspired luxury clothing">
+                            <!-- Displays an image representing Basotho-inspired luxury clothing. -->
+                            <!-- alt describes the image for accessibility. -->
+
                         </div>
+                        <!-- Closes the first card image container. -->
+
                         <div class="card-content">
+                            <!-- Contains the text content of the first card. -->
+
                             <h3>Luxury Clothing</h3>
+                            <!-- Displays the first offering title. -->
+
                             <p>Basotho-inspired luxury clothing crafted with modern tailoring.</p>
+                            <!-- Describes the luxury clothing offering. -->
+
                         </div>
+                        <!-- Closes the first card content. -->
+
                     </div>
+                    <!-- Closes the first offering card. -->
 
                     <div class="card">
+                        <!-- Creates the second offering card. -->
+
                         <div class="card-image">
+                            <!-- Creates the image area of the second card. -->
+
                             <img src="./assets/images/founder.jpeg" alt="Traditional craftsmanship with modern design">
+                            <!-- Displays an image representing traditional craftsmanship and modern design. -->
+                            <!-- alt provides an accessible description of the image. -->
+
                         </div>
+                        <!-- Closes the second card image container. -->
+
                         <div class="card-content">
+                            <!-- Contains the text content of the second card. -->
+
                             <h3>Custom Pieces</h3>
+                            <!-- Displays the second offering title. -->
+
                             <p>Custom pieces created for special occasions, made to order.</p>
+                            <!-- Describes the custom-piece offering. -->
+
                         </div>
+                        <!-- Closes the second card content. -->
+
                     </div>
+                    <!-- Closes the second offering card. -->
 
                     <div class="card">
+                        <!-- Creates the third offering card. -->
+
                         <div class="card-image">
+                            <!-- Creates the image area of the third card. -->
+
                             <img src="./assets/images/ceo.jpeg" alt="Attention to detail and timeless quality">
+                            <!-- Displays an image representing attention to detail and timeless quality. -->
+                            <!-- alt provides an accessible description of the image. -->
+
                         </div>
+                        <!-- Closes the third card image container. -->
+
                         <div class="card-content">
+                            <!-- Contains the text content of the third card. -->
+
                             <h3>Timeless Quality</h3>
+                            <!-- Displays the third offering title. -->
+
                             <p>Attention to detail and quality that lasts beyond the season.</p>
+                            <!-- Describes the brand's quality-focused offering. -->
+
                         </div>
+                        <!-- Closes the third card content. -->
+
                     </div>
+                    <!-- Closes the third offering card. -->
+
                 </div>
+                <!-- Closes the offerings card grid. -->
+
             </div>
+            <!-- Closes the main offerings container. -->
+
         </section>
+        <!-- Closes the offerings section. -->
 
     </main>
+    <!-- Closes the main page content. -->
 
     <footer class="site-footer">
+        <!-- Creates the website footer. -->
+
         <div class="container">
+            <!-- Creates the main footer container. -->
+
             <div class="footer-grid">
+                <!-- Creates a responsive grid for the footer's three content areas. -->
+
                 <div>
+                    <!-- Creates the first footer column containing the brand information. -->
+
                     <h3 class="footer-title">Motubatsi <span class="text-gold">Luxury</span></h3>
+                    <!-- Displays the brand name in the footer. -->
+                    <!-- The text-gold class gives "Luxury" the site's gold styling. -->
+
                     <p>Basotho Heritage. Modern Luxury.</p>
+                    <!-- Displays the brand tagline. -->
+
                 </div>
+                <!-- Closes the brand information column. -->
+
                 <div class="footer-links">
+                    <!-- Creates the second footer column containing exploration links. -->
+
                     <h3 class="footer-title" style="font-size: 16px;">Explore</h3>
+                    <!-- Displays the Explore heading. -->
+                    <!-- The inline style sets the heading font size to 16 pixels. -->
+
                     <a href="./pages/about.html">About Us</a>
+                    <!-- Footer link to the About Us page. -->
+
                     <a href="./pages/our-story.html">Our Story</a>
+                    <!-- Footer link to the Our Story page. -->
+
                     <a href="./pages/product.html">Products</a>
+                    <!-- Footer link to the Products page. -->
+
                     <a href="./pages/catalog.html">Catalog</a>
+                    <!-- Footer link to the Catalog page. -->
+
                     <a href="./pages/contact.html">Contact</a>
+                    <!-- Footer link to the Contact page. -->
+
                 </div>
+                <!-- Closes the Explore links column. -->
+
                 <div class="footer-links">
+                    <!-- Creates the third footer column containing contact and social information. -->
+
                     <h3 class="footer-title" style="font-size: 16px;">Contact</h3>
+                    <!-- Displays the Contact heading. -->
+                    <!-- The inline style sets the heading font size to 16 pixels. -->
+
                     <a href="mailto:info@houseofmotubatsi.co.za">info@houseofmotubatsi.co.za</a>
+                    <!-- Creates an email link that opens the visitor's default email application. -->
+
                     <a href="https://instagram.com/houseofmotubatsi" target="_blank" rel="noopener">@houseofmotubatsi</a>
+                    <!-- Creates a link to the brand's Instagram profile. -->
+                    <!-- target="_blank" opens the link in a new browser tab or window. -->
+                    <!-- rel="noopener" improves security when opening an external page in a new tab. -->
+
                     <span>South Africa</span>
+                    <!-- Displays the country associated with the brand. -->
+
                 </div>
+                <!-- Closes the Contact column. -->
+
             </div>
+            <!-- Closes the footer grid. -->
+
             <div class="footer-bottom">
+                <!-- Creates the bottom area of the footer. -->
+
                 &copy; 2026 House of Motubatsi. All Rights Reserved.
+                <!-- Displays the copyright notice. -->
+                <!-- &copy; creates the copyright symbol. -->
+
             </div>
+            <!-- Closes the footer-bottom area. -->
+
         </div>
+        <!-- Closes the main footer container. -->
+
     </footer>
+    <!-- Closes the website footer. -->
 
     <script src="./assets/js/main.js"></script>
+    <!-- Loads the website JavaScript file for interactive functionality such as the mobile menu. -->
+
 </body>
+<!-- Closes the body containing the visible webpage content. -->
+
 </html>
+<!-- Closes the HTML document. -->
