@@ -3,49 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href"assets/style.css">
-    <title>Motubatsi_Luxury | HOME</title>
+    <meta name="description" content="House of Motubatsi — a Basotho-inspired luxury fashion brand celebrating heritage, identity and modern elegance.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Motubatsi Luxury | Home</title>
 </head>
 <body>
 
-    <header> 
+    <header class="site-header">
+        <div class="navbar">
+            <div class="nav-container">
+                <a href="./index.html" class="brand">Motubatsi <span>Luxury</span></a>
 
-        <!--Logo goes here-->
-        <img src="./assets/images/WhatsApp Image 2026-08-05 at 21.18.32.jpeg" alt="Motubatsi_Luxury --Logo" width="120">
-         <!--Navigation links-->
-         <nav>
-            <a href="./index.html">HOME</a>
-            <a href="./pages/about.html">ABOUT US</a>
-            <a href="./pages/contact.html">CONTACT US</a>
-            <a href="./pages/enquiry.html">ENQUIRY</a>
-            <a href="./pages/our story.html">OUR STORY</a>
-         </nav>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="./index.html" class="active">Home</a></li>
+                        <li><a href="./pages/about.html">About Us</a></li>
+                        <li><a href="./pages/our-story.html">Our Story</a></li>
+                        <li><a href="./pages/product.html">Products</a></li>
+                        <li><a href="./pages/enquiry.html">Enquiry</a></li>
+                        <li><a href="./pages/contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+
+                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            </div>
+        </div>
     </header>
-<Main>
 
-    <!--First Section-->
-    <section>
+    <main>
 
-
-        <!--Welcome message-->
-        <h1 style="color: blue; text-align: center; ">WELCOME Motubatsi_Luxury</h1>
-        <!--Website description paragraph-->
-        <p> Motubatsi_Luxury is a Basotho-inspired luxury fashion brand that celebrate heritage, identity and modern 
-            elegance. We craft timeless designs that blend traditional Basotho culture confidence and sophistication.
-            Motubatsi_Luxury. Our heritage. Your Luxury. </p>
-<img src="./assets/images/background.image.jpeg" width="1200"
-
-            
-
-        
-        
-
-        
-        
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Basotho Heritage &middot; Modern Luxury</p>
+                <h1>Motubatsi Luxury</h1>
+                <p>
+                    A Basotho-inspired luxury fashion brand that celebrates heritage, identity and modern
+                    elegance — timeless designs blending traditional Basotho culture with contemporary style.
+                </p>
+                <a href="./pages/product.html" class="btn">Explore Collections</a>
+                <a href="./pages/enquiry.html" class="btn btn-outline" style="margin-left: 14px;">Make an Enquiry</a>
+            </div>
         </section>
-</main>
 
->
-    
+        <!-- About teaser -->
+        <section class="about">
+            <div class="container about-grid">
+                <div class="about-image">
+                    <img src="./assets/images/founder-ceo.jpeg" alt="Founder & CEO of Motubatsi Luxury">
+                </div>
+                <div class="about-content">
+                    <p class="section-eyebrow">Our Story</p>
+                    <h2>Heritage, Reimagined</h2>
+                    <p>
+                        House of Motubatsi is a Basotho-inspired luxury fashion brand that celebrates heritage,
+                        identity and modern elegance. We create timeless designs that blend traditional Basotho
+                        culture with contemporary style.
+                    </p>
+                    <p>
+                        Our brand represents pride, confidence, sophistication and appreciation for Basotho
+                        heritage — carried from the mountains of Lesotho onto the global stage.
+                    </p>
+                    <a href="./pages/about.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offerings -->
+        <section class="bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">What We Offer</p>
+                    <h2 class="section-title">Crafted With Purpose</h2>
+                    <p class="section-text">
+                        Traditional craftsmanship, modern design and timeless quality — in every piece.
+                    </p>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/mokorotlo.jpeg" alt="Basotho-inspired luxury clothing">
+                        </div>
+                        <div class="card-content">
+                            <h3>Luxury Clothing</h3>
+                            <p>Basotho-inspired luxury clothing crafted with modern tailoring.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/founder.jpeg" alt="Traditional craftsmanship with modern design">
+                        </div>
+                        <div class="card-content">
+                            <h3>Custom Pieces</h3>
+                            <p>Custom pieces created for special occasions, made to order.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/ceo.jpeg" alt="Attention to detail and timeless quality">
+                        </div>
+                        <div class="card-content">
+                            <h3>Timeless Quality</h3>
+                            <p>Attention to detail and quality that lasts beyond the season.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">Motubatsi <span class="text-gold">Luxury</span></h3>
+                    <p>Basotho Heritage. Modern Luxury.</p>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title" style="font-size: 16px;">Explore</h3>
+                    <a href="./pages/about.html">About Us</a>
+                    <a href="./pages/our-story.html">Our Story</a>
+                    <a href="./pages/product.html">Products</a>
+                    <a href="./pages/contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title" style="font-size: 16px;">Contact</h3>
+                    <a href="mailto:info@houseofmotubatsi.co.za">info@houseofmotubatsi.co.za</a>
+                    <a href="https://instagram.com/houseofmotubatsi" target="_blank" rel="noopener">@houseofmotubatsi</a>
+                    <span>South Africa</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 House of Motubatsi. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
