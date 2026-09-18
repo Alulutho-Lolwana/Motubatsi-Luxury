@@ -26,9 +26,10 @@ To promote Basotho culture through refined fashion by creating designs that comm
 1. **Home** — Welcome to House of Motubatsi
 2. **About Us** — Learn about our story, mission and values
 3. **Our Story** — The heritage and journey behind the brand
-4. **Products** — Explore our luxury fashion collections
-5. **Enquiry** — Submit an enquiry about our products or services
-6. **Contact Us** — Get in touch with House of Motubatsi
+4. **Products** — A quick overview of our collections
+5. **Catalog** — The full catalog, organised by category (Dresses, Jackets, Blankets & Wraps, Headwear)
+6. **Enquiry** — Submit an enquiry about our products or services
+7. **Contact Us** — Get in touch with House of Motubatsi
 
 ## Our Inspiration
 
@@ -61,6 +62,7 @@ Motubatsi-Luxury/
 │   ├── about.html               About Us
 │   ├── our-story.html           Our Story
 │   ├── product.html             Products
+│   ├── catalog.html             Full catalog, organised by category
 │   ├── enquiry.html             Product enquiry form
 │   └── contact.html             Contact form + map
 ├── assets/
