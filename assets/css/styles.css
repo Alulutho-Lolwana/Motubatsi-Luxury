@@ -5,23 +5,39 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
+/* Begins this CSS rule or grouped selector. */
 :root {
+    /* Defines the --black custom property value. */
     --black: #0b0b0b;
+    /* Defines the --charcoal custom property value. */
     --charcoal: #151515;
+    /* Defines the --dark custom property value. */
     --dark: #202020;
+    /* Defines the --cream custom property value. */
     --cream: #f5f1e8;
+    /* Defines the --white custom property value. */
     --white: #ffffff;
+    /* Defines the --gold custom property value. */
     --gold: #c8a96b;
+    /* Defines the --gold-light custom property value. */
     --gold-light: #dfc58f;
+    /* Defines the --muted custom property value. */
     --muted: #aaa49a;
+    /* Defines the --border custom property value. */
     --border: rgba(200, 169, 107, 0.28);
 
+    /* Defines the --font-display custom property value. */
     --font-display: "Cormorant Garamond", Georgia, serif;
+    /* Defines the --font-body custom property value. */
     --font-body: "Montserrat", Arial, sans-serif;
 
+    /* Defines the --container custom property value. */
     --container: 1180px;
+    /* Defines the --radius custom property value. */
     --radius: 2px;
+    /* Defines the --shadow custom property value. */
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    /* Defines the --transition custom property value. */
     --transition: 0.3s ease;
 }
 
@@ -29,77 +45,121 @@
 
 *,
 *::before,
+/* Begins this CSS rule or grouped selector. */
 *::after {
+    /* Sets the box-sizing CSS property. */
     box-sizing: border-box;
+    /* Sets the margin CSS property. */
     margin: 0;
+    /* Sets the padding CSS property. */
     padding: 0;
 }
 
+/* Begins this CSS rule or grouped selector. */
 html {
+    /* Sets the scroll-behavior CSS property. */
     scroll-behavior: smooth;
 }
 
+/* Begins this CSS rule or grouped selector. */
 body {
+    /* Sets the min-height CSS property. */
     min-height: 100vh;
+    /* Sets the background CSS property. */
     background: var(--black);
+    /* Sets the color CSS property. */
     color: var(--cream);
+    /* Sets the font-family CSS property. */
     font-family: var(--font-body);
+    /* Sets the font-size CSS property. */
     font-size: 15px;
+    /* Sets the font-weight CSS property. */
     font-weight: 400;
+    /* Sets the line-height CSS property. */
     line-height: 1.7;
 }
 
+/* Begins this CSS rule or grouped selector. */
 img {
+    /* Sets the display CSS property. */
     display: block;
+    /* Sets the max-width CSS property. */
     max-width: 100%;
+    /* Sets the height CSS property. */
     height: auto;
 }
 
+/* Begins this CSS rule or grouped selector. */
 a {
+    /* Sets the color CSS property. */
     color: inherit;
+    /* Sets the text-decoration CSS property. */
     text-decoration: none;
 }
 
 button,
 input,
 textarea,
+/* Begins this CSS rule or grouped selector. */
 select {
+    /* Sets the font CSS property. */
     font: inherit;
 }
 
+/* Begins this CSS rule or grouped selector. */
 button {
+    /* Sets the cursor CSS property. */
     cursor: pointer;
 }
 
 ul,
+/* Begins this CSS rule or grouped selector. */
 ol {
+    /* Sets the list-style CSS property. */
     list-style: none;
 }
 
 /* ---------- Global layout ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .container {
+    /* Sets the width CSS property. */
     width: min(92%, var(--container));
+    /* Sets the margin-inline CSS property. */
     margin-inline: auto;
 }
 
+/* Begins this CSS rule or grouped selector. */
 section {
+    /* Sets the padding CSS property. */
     padding: 100px 0;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .section-header {
+    /* Sets the max-width CSS property. */
     max-width: 700px;
+    /* Sets the margin CSS property. */
     margin: 0 auto 55px;
+    /* Sets the text-align CSS property. */
     text-align: center;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .section-eyebrow {
+    /* Sets the display CSS property. */
     display: inline-block;
+    /* Sets the margin-bottom CSS property. */
     margin-bottom: 12px;
+    /* Sets the color CSS property. */
     color: var(--gold);
+    /* Sets the font-size CSS property. */
     font-size: 11px;
+    /* Sets the font-weight CSS property. */
     font-weight: 600;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.25em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
 }
 
@@ -107,18 +167,27 @@ section {
 h1,
 h2,
 h3,
+/* Begins this CSS rule or grouped selector. */
 h4 {
+    /* Sets the font-family CSS property. */
     font-family: var(--font-display);
+    /* Sets the font-weight CSS property. */
     font-weight: 500;
+    /* Sets the line-height CSS property. */
     line-height: 1.1;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .section-title {
+    /* Sets the font-size CSS property. */
     font-size: clamp(2.4rem, 5vw, 4.2rem);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .section-text {
+    /* Sets the margin-top CSS property. */
     margin-top: 18px;
+    /* Sets the color CSS property. */
     color: var(--muted);
 }
 
@@ -126,186 +195,298 @@ h4 {
 
 header,
 .site-header,
+/* Begins this CSS rule or grouped selector. */
 .navbar {
+    /* Sets the position CSS property. */
     position: relative;
+    /* Sets the z-index CSS property. */
     z-index: 1000;
 }
 
 .site-header,
+/* Begins this CSS rule or grouped selector. */
 .navbar {
+    /* Sets the width CSS property. */
     width: 100%;
+    /* Sets the background CSS property. */
     background: rgba(11, 11, 11, 0.96);
+    /* Sets the border-bottom CSS property. */
     border-bottom: 1px solid var(--border);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .navbar {
+    /* Sets the min-height CSS property. */
     min-height: 78px;
+    /* Sets the display CSS property. */
     display: flex;
+    /* Sets the align-items CSS property. */
     align-items: center;
 }
 
 .navbar .container,
+/* Begins this CSS rule or grouped selector. */
 .nav-container {
+    /* Sets the display CSS property. */
     display: flex;
+    /* Sets the align-items CSS property. */
     align-items: center;
+    /* Sets the justify-content CSS property. */
     justify-content: space-between;
+    /* Sets the gap CSS property. */
     gap: 30px;
+    /* Sets the width CSS property. */
     width: min(92%, var(--container));
+    /* Sets the margin-inline CSS property. */
     margin-inline: auto;
 }
 
 .logo,
+/* Begins this CSS rule or grouped selector. */
 .brand {
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the font-family CSS property. */
     font-family: var(--font-display);
+    /* Sets the font-size CSS property. */
     font-size: 28px;
+    /* Sets the font-weight CSS property. */
     font-weight: 600;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.08em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
 }
 
 .logo span,
+/* Begins this CSS rule or grouped selector. */
 .brand span {
+    /* Sets the color CSS property. */
     color: var(--gold);
 }
 
 .nav-links,
+/* Begins this CSS rule or grouped selector. */
 nav ul {
+    /* Sets the display CSS property. */
     display: flex;
+    /* Sets the align-items CSS property. */
     align-items: center;
+    /* Sets the gap CSS property. */
     gap: 32px;
 }
 
 .nav-links a,
+/* Begins this CSS rule or grouped selector. */
 nav ul a {
+    /* Sets the position CSS property. */
     position: relative;
+    /* Sets the color CSS property. */
     color: var(--cream);
+    /* Sets the font-size CSS property. */
     font-size: 11px;
+    /* Sets the font-weight CSS property. */
     font-weight: 500;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.16em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
+    /* Sets the transition CSS property. */
     transition: color var(--transition);
 }
 
 .nav-links a::after,
+/* Begins this CSS rule or grouped selector. */
 nav ul a::after {
+    /* Sets the content CSS property. */
     content: "";
+    /* Sets the position CSS property. */
     position: absolute;
+    /* Sets the left CSS property. */
     left: 0;
+    /* Sets the bottom CSS property. */
     bottom: -8px;
+    /* Sets the width CSS property. */
     width: 0;
+    /* Sets the height CSS property. */
     height: 1px;
+    /* Sets the background CSS property. */
     background: var(--gold);
+    /* Sets the transition CSS property. */
     transition: width var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active,
 nav ul a:hover,
+/* Begins this CSS rule or grouped selector. */
 nav ul a.active {
+    /* Sets the color CSS property. */
     color: var(--gold-light);
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after,
 nav ul a:hover::after,
+/* Begins this CSS rule or grouped selector. */
 nav ul a.active::after {
+    /* Sets the width CSS property. */
     width: 100%;
 }
 
 /* ---------- Hero ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .hero {
+    /* Sets the position CSS property. */
     position: relative;
+    /* Sets the min-height CSS property. */
     min-height: 78vh;
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the place-items CSS property. */
     place-items: center;
+    /* Sets the overflow CSS property. */
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.7)),
+        /* Sets the url("../images/hero-background.jpeg") center/cover no-repeat; CSS property. */
         url("../images/hero-background.jpeg") center/cover no-repeat;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .hero::after {
+    /* Sets the content CSS property. */
     content: "";
+    /* Sets the position CSS property. */
     position: absolute;
+    /* Sets the inset CSS property. */
     inset: 0;
     background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 0.55),
         transparent 65%
+    /* Sets the ); CSS property. */
     );
+    /* Sets the pointer-events CSS property. */
     pointer-events: none;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .hero-content {
+    /* Sets the position CSS property. */
     position: relative;
+    /* Sets the z-index CSS property. */
     z-index: 1;
+    /* Sets the width CSS property. */
     width: min(92%, 900px);
+    /* Sets the text-align CSS property. */
     text-align: center;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .hero-eyebrow {
+    /* Sets the margin-bottom CSS property. */
     margin-bottom: 18px;
+    /* Sets the color CSS property. */
     color: var(--gold-light);
+    /* Sets the font-size CSS property. */
     font-size: 12px;
+    /* Sets the font-weight CSS property. */
     font-weight: 500;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.3em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .hero h1 {
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the font-size CSS property. */
     font-size: clamp(3.5rem, 8vw, 7rem);
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.015em;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .hero p {
+    /* Sets the max-width CSS property. */
     max-width: 650px;
+    /* Sets the margin CSS property. */
     margin: 25px auto 35px;
+    /* Sets the color CSS property. */
     color: #ddd8ce;
+    /* Sets the font-size CSS property. */
     font-size: 16px;
 }
 
 /* ---------- Buttons ---------- */
 
 .btn,
+/* Begins this CSS rule or grouped selector. */
 button.btn {
+    /* Sets the display CSS property. */
     display: inline-flex;
+    /* Sets the align-items CSS property. */
     align-items: center;
+    /* Sets the justify-content CSS property. */
     justify-content: center;
+    /* Sets the min-height CSS property. */
     min-height: 48px;
+    /* Sets the padding CSS property. */
     padding: 0 28px;
+    /* Sets the border CSS property. */
     border: 1px solid var(--gold);
+    /* Sets the border-radius CSS property. */
     border-radius: var(--radius);
+    /* Sets the background CSS property. */
     background: var(--gold);
+    /* Sets the color CSS property. */
     color: var(--black);
+    /* Sets the font-size CSS property. */
     font-size: 11px;
+    /* Sets the font-weight CSS property. */
     font-weight: 600;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.16em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
     transition:
         background var(--transition),
         color var(--transition),
         transform var(--transition),
+        /* Sets the box-shadow var(--transition); CSS property. */
         box-shadow var(--transition);
 }
 
 .btn:hover,
+/* Begins this CSS rule or grouped selector. */
 button.btn:hover {
+    /* Sets the background CSS property. */
     background: transparent;
+    /* Sets the color CSS property. */
     color: var(--gold-light);
+    /* Sets the transform CSS property. */
     transform: translateY(-2px);
+    /* Sets the box-shadow CSS property. */
     box-shadow: 0 10px 30px rgba(200, 169, 107, 0.12);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .btn-outline {
+    /* Sets the background CSS property. */
     background: transparent;
+    /* Sets the color CSS property. */
     color: var(--gold-light);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .btn-outline:hover {
+    /* Sets the background CSS property. */
     background: var(--gold);
+    /* Sets the color CSS property. */
     color: var(--black);
 }
 
@@ -313,383 +494,595 @@ button.btn:hover {
 
 .grid,
 .card-grid,
+/* Begins this CSS rule or grouped selector. */
 .services-grid {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the grid-template-columns CSS property. */
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Sets the gap CSS property. */
     gap: 28px;
 }
 
 .card,
+/* Begins this CSS rule or grouped selector. */
 .service-card {
+    /* Sets the overflow CSS property. */
     overflow: hidden;
+    /* Sets the background CSS property. */
     background: var(--charcoal);
+    /* Sets the border CSS property. */
     border: 1px solid rgba(255, 255, 255, 0.07);
     transition:
         transform var(--transition),
         border-color var(--transition),
+        /* Sets the box-shadow var(--transition); CSS property. */
         box-shadow var(--transition);
 }
 
 .card:hover,
+/* Begins this CSS rule or grouped selector. */
 .service-card:hover {
+    /* Sets the transform CSS property. */
     transform: translateY(-6px);
+    /* Sets the border-color CSS property. */
     border-color: var(--border);
+    /* Sets the box-shadow CSS property. */
     box-shadow: var(--shadow);
 }
 
 .card-image,
+/* Begins this CSS rule or grouped selector. */
 .service-image {
+    /* Sets the aspect-ratio CSS property. */
     aspect-ratio: 4 / 3;
+    /* Sets the overflow CSS property. */
     overflow: hidden;
+    /* Sets the background CSS property. */
     background: var(--dark);
 }
 
 .card-image img,
+/* Begins this CSS rule or grouped selector. */
 .service-image img {
+    /* Sets the width CSS property. */
     width: 100%;
+    /* Sets the height CSS property. */
     height: 100%;
+    /* Sets the object-fit CSS property. */
     object-fit: cover;
+    /* Sets the transition CSS property. */
     transition: transform 0.6s ease;
 }
 
 .card:hover img,
+/* Begins this CSS rule or grouped selector. */
 .service-card:hover img {
+    /* Sets the transform CSS property. */
     transform: scale(1.04);
 }
 
 .card-content,
+/* Begins this CSS rule or grouped selector. */
 .service-content {
+    /* Sets the padding CSS property. */
     padding: 28px;
 }
 
 .card h3,
+/* Begins this CSS rule or grouped selector. */
 .service-card h3 {
+    /* Sets the margin-bottom CSS property. */
     margin-bottom: 10px;
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the font-size CSS property. */
     font-size: 28px;
 }
 
 .card p,
+/* Begins this CSS rule or grouped selector. */
 .service-card p {
+    /* Sets the color CSS property. */
     color: var(--muted);
+    /* Sets the font-size CSS property. */
     font-size: 14px;
 }
 
 /* ---------- About ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .about {
+    /* Sets the background CSS property. */
     background: var(--cream);
+    /* Sets the color CSS property. */
     color: var(--black);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about .section-text {
+    /* Sets the color CSS property. */
     color: #5e5a53;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about-grid {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the grid-template-columns CSS property. */
     grid-template-columns: 1fr 1fr;
+    /* Sets the align-items CSS property. */
     align-items: center;
+    /* Sets the gap CSS property. */
     gap: 70px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about-image {
+    /* Sets the overflow CSS property. */
     overflow: hidden;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about-image img {
+    /* Sets the width CSS property. */
     width: 100%;
+    /* Sets the aspect-ratio CSS property. */
     aspect-ratio: 4 / 5;
+    /* Sets the object-fit CSS property. */
     object-fit: cover;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about-content h2 {
+    /* Sets the font-size CSS property. */
     font-size: clamp(2.7rem, 5vw, 4.5rem);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .about-content p {
+    /* Sets the margin CSS property. */
     margin: 22px 0;
+    /* Sets the color CSS property. */
     color: #5e5a53;
 }
 
 /* ---------- Gallery ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .gallery {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the grid-template-columns CSS property. */
     grid-template-columns: repeat(12, 1fr);
+    /* Sets the gap CSS property. */
     gap: 10px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .gallery-item {
+    /* Sets the position CSS property. */
     position: relative;
+    /* Sets the min-height CSS property. */
     min-height: 260px;
+    /* Sets the overflow CSS property. */
     overflow: hidden;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .gallery-item:nth-child(1) {
+    /* Sets the grid-column CSS property. */
     grid-column: span 7;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .gallery-item:nth-child(2) {
+    /* Sets the grid-column CSS property. */
     grid-column: span 5;
 }
 
 .gallery-item:nth-child(3),
 .gallery-item:nth-child(4),
+/* Begins this CSS rule or grouped selector. */
 .gallery-item:nth-child(5) {
+    /* Sets the grid-column CSS property. */
     grid-column: span 4;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .gallery-item img {
+    /* Sets the width CSS property. */
     width: 100%;
+    /* Sets the height CSS property. */
     height: 100%;
+    /* Sets the object-fit CSS property. */
     object-fit: cover;
+    /* Sets the transition CSS property. */
     transition: transform 0.7s ease;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .gallery-item:hover img {
+    /* Sets the transform CSS property. */
     transform: scale(1.06);
 }
 
 /* ---------- Contact ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .contact {
+    /* Sets the background CSS property. */
     background: var(--charcoal);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .contact-grid {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the grid-template-columns CSS property. */
     grid-template-columns: 0.8fr 1.2fr;
+    /* Sets the gap CSS property. */
     gap: 70px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .contact-details {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the gap CSS property. */
     gap: 25px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .contact-details h3 {
+    /* Sets the margin-bottom CSS property. */
     margin-bottom: 5px;
+    /* Sets the color CSS property. */
     color: var(--gold-light);
+    /* Sets the font-size CSS property. */
     font-size: 24px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .contact-details p {
+    /* Sets the color CSS property. */
     color: var(--muted);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .contact-form {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the gap CSS property. */
     gap: 18px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .form-group {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the gap CSS property. */
     gap: 8px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .form-group label {
+    /* Sets the color CSS property. */
     color: var(--cream);
+    /* Sets the font-size CSS property. */
     font-size: 11px;
+    /* Sets the font-weight CSS property. */
     font-weight: 600;
+    /* Sets the letter-spacing CSS property. */
     letter-spacing: 0.15em;
+    /* Sets the text-transform CSS property. */
     text-transform: uppercase;
 }
 
 .form-group input,
 .form-group textarea,
+/* Begins this CSS rule or grouped selector. */
 .form-group select {
+    /* Sets the width CSS property. */
     width: 100%;
+    /* Sets the padding CSS property. */
     padding: 14px 16px;
+    /* Sets the border CSS property. */
     border: 1px solid rgba(255, 255, 255, 0.13);
+    /* Sets the border-radius CSS property. */
     border-radius: var(--radius);
+    /* Sets the outline CSS property. */
     outline: none;
+    /* Sets the background CSS property. */
     background: var(--black);
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the transition CSS property. */
     transition: border-color var(--transition);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .form-group textarea {
+    /* Sets the min-height CSS property. */
     min-height: 150px;
+    /* Sets the resize CSS property. */
     resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
+/* Begins this CSS rule or grouped selector. */
 .form-group select:focus {
+    /* Sets the border-color CSS property. */
     border-color: var(--gold);
 }
 
 /* ---------- Footer ---------- */
 
 footer,
+/* Begins this CSS rule or grouped selector. */
 .site-footer {
+    /* Sets the padding CSS property. */
     padding: 55px 0 25px;
+    /* Sets the background CSS property. */
     background: #070707;
+    /* Sets the border-top CSS property. */
     border-top: 1px solid var(--border);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-grid {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the grid-template-columns CSS property. */
     grid-template-columns: 1.4fr 1fr 1fr;
+    /* Sets the gap CSS property. */
     gap: 50px;
+    /* Sets the padding-bottom CSS property. */
     padding-bottom: 45px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-title {
+    /* Sets the margin-bottom CSS property. */
     margin-bottom: 15px;
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the font-family CSS property. */
     font-family: var(--font-display);
+    /* Sets the font-size CSS property. */
     font-size: 25px;
 }
 
 footer p,
+/* Begins this CSS rule or grouped selector. */
 .site-footer p {
+    /* Sets the color CSS property. */
     color: var(--muted);
+    /* Sets the font-size CSS property. */
     font-size: 13px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-links {
+    /* Sets the display CSS property. */
     display: grid;
+    /* Sets the gap CSS property. */
     gap: 9px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-links a {
+    /* Sets the color CSS property. */
     color: var(--muted);
+    /* Sets the font-size CSS property. */
     font-size: 12px;
+    /* Sets the transition CSS property. */
     transition: color var(--transition);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-links a:hover {
+    /* Sets the color CSS property. */
     color: var(--gold-light);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .footer-bottom {
+    /* Sets the padding-top CSS property. */
     padding-top: 22px;
+    /* Sets the border-top CSS property. */
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+    /* Sets the color CSS property. */
     color: #777;
+    /* Sets the font-size CSS property. */
     font-size: 11px;
+    /* Sets the text-align CSS property. */
     text-align: center;
 }
 
 /* ---------- Utility classes ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .text-center {
+    /* Sets the text-align CSS property. */
     text-align: center;
 }
 
+/* Begins this CSS rule or grouped selector. */
 .text-gold {
+    /* Sets the color CSS property. */
     color: var(--gold);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .bg-dark {
+    /* Sets the background CSS property. */
     background: var(--charcoal);
 }
 
+/* Begins this CSS rule or grouped selector. */
 .bg-black {
+    /* Sets the background CSS property. */
     background: var(--black);
 }
 
+/* Sets the .mt-1 { margin-top CSS property. */
 .mt-1 { margin-top: 10px; }
+/* Sets the .mt-2 { margin-top CSS property. */
 .mt-2 { margin-top: 20px; }
+/* Sets the .mt-3 { margin-top CSS property. */
 .mt-3 { margin-top: 30px; }
+/* Sets the .mb-1 { margin-bottom CSS property. */
 .mb-1 { margin-bottom: 10px; }
+/* Sets the .mb-2 { margin-bottom CSS property. */
 .mb-2 { margin-bottom: 20px; }
+/* Sets the .mb-3 { margin-bottom CSS property. */
 .mb-3 { margin-bottom: 30px; }
 
 /* ---------- Mobile navigation ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 .menu-toggle {
+    /* Sets the display CSS property. */
     display: none;
+    /* Sets the border CSS property. */
     border: 0;
+    /* Sets the background CSS property. */
     background: transparent;
+    /* Sets the color CSS property. */
     color: var(--white);
+    /* Sets the font-size CSS property. */
     font-size: 24px;
 }
 
 /* ---------- Responsive ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 @media (max-width: 900px) {
+    /* Begins this CSS rule or grouped selector. */
     section {
+        /* Sets the padding CSS property. */
         padding: 75px 0;
     }
 
     .nav-links,
+    /* Begins this CSS rule or grouped selector. */
     nav ul {
+        /* Sets the gap CSS property. */
         gap: 18px;
     }
 
     .about-grid,
+    /* Begins this CSS rule or grouped selector. */
     .contact-grid {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: 1fr;
+        /* Sets the gap CSS property. */
         gap: 45px;
     }
 
     .grid,
     .card-grid,
+    /* Begins this CSS rule or grouped selector. */
     .services-grid {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .footer-grid {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: 1fr 1fr;
     }
 }
 
+/* Begins this CSS rule or grouped selector. */
 @media (max-width: 650px) {
+    /* Begins this CSS rule or grouped selector. */
     section {
+        /* Sets the padding CSS property. */
         padding: 60px 0;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .navbar {
+        /* Sets the min-height CSS property. */
         min-height: 68px;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .menu-toggle {
+        /* Sets the display CSS property. */
         display: block;
     }
 
     .nav-links,
+    /* Begins this CSS rule or grouped selector. */
     nav ul {
+        /* Sets the display CSS property. */
         display: none;
+        /* Sets the position CSS property. */
         position: absolute;
+        /* Sets the top CSS property. */
         top: 100%;
+        /* Sets the left CSS property. */
         left: 0;
+        /* Sets the right CSS property. */
         right: 0;
+        /* Sets the flex-direction CSS property. */
         flex-direction: column;
+        /* Sets the align-items CSS property. */
         align-items: stretch;
+        /* Sets the gap CSS property. */
         gap: 0;
+        /* Sets the padding CSS property. */
         padding: 12px 6%;
+        /* Sets the background CSS property. */
         background: var(--black);
+        /* Sets the border-bottom CSS property. */
         border-bottom: 1px solid var(--border);
     }
 
     .nav-links.open,
+    /* Begins this CSS rule or grouped selector. */
     nav ul.open {
+        /* Sets the display CSS property. */
         display: flex;
     }
 
     .nav-links a,
+    /* Begins this CSS rule or grouped selector. */
     nav ul a {
+        /* Sets the display CSS property. */
         display: block;
+        /* Sets the padding CSS property. */
         padding: 14px 0;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .hero {
+        /* Sets the min-height CSS property. */
         min-height: 72vh;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .hero h1 {
+        /* Sets the font-size CSS property. */
         font-size: clamp(3rem, 15vw, 5rem);
     }
 
     .grid,
     .card-grid,
+    /* Begins this CSS rule or grouped selector. */
     .services-grid {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: 1fr;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .gallery {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: 1fr;
     }
 
@@ -698,72 +1091,124 @@ footer p,
     .gallery-item:nth-child(2),
     .gallery-item:nth-child(3),
     .gallery-item:nth-child(4),
+    /* Begins this CSS rule or grouped selector. */
     .gallery-item:nth-child(5) {
+        /* Sets the grid-column CSS property. */
         grid-column: span 1;
+        /* Sets the min-height CSS property. */
         min-height: 240px;
     }
 
+    /* Begins this CSS rule or grouped selector. */
     .footer-grid {
+        /* Sets the grid-template-columns CSS property. */
         grid-template-columns: 1fr;
+        /* Sets the gap CSS property. */
         gap: 30px;
     }
 }
 
 /* ---------- Accessibility ---------- */
 
+/* Begins this CSS rule or grouped selector. */
 :focus-visible {
+    /* Sets the outline CSS property. */
     outline: 2px solid var(--gold-light);
+    /* Sets the outline-offset CSS property. */
     outline-offset: 4px;
 }
 
+/* Begins this CSS rule or grouped selector. */
 @media (prefers-reduced-motion: reduce) {
+    /* Begins this CSS rule or grouped selector. */
     html {
+        /* Sets the scroll-behavior CSS property. */
         scroll-behavior: auto;
     }
 
     *,
     *::before,
+    /* Begins this CSS rule or grouped selector. */
     *::after {
+        /* Sets the transition-duration CSS property. */
         transition-duration: 0.01ms !important;
+        /* Sets the animation-duration CSS property. */
         animation-duration: 0.01ms !important;
     }
 }
 
+/* Begins this CSS rule or grouped selector. */
 .category-nav {
-            position: sticky;
-            top: 0;
-            z-index: 900;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 18px 0;
-            background: rgba(11, 11, 11, 0.96);
-            border-bottom: 1px solid var(--border);
-        }
-        .category-nav a {
-            padding: 8px 18px;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--cream);
-            transition: background var(--transition), color var(--transition), border-color var(--transition);
-        }
-        .category-nav a:hover {
-            background: var(--gold);
-            color: var(--black);
-            border-color: var(--gold);
-        }
-        .catalog-category {
-            scroll-margin-top: 70px;
-        }
-        .price-tag {
-            display: inline-block;
+    /* Sets the position CSS property. */
+    position: sticky;
+    /* Sets the top CSS property. */
+    top: 0;
+    /* Sets the z-index CSS property. */
+    z-index: 900;
+    /* Sets the display CSS property. */
+    display: flex;
+    /* Sets the flex-wrap CSS property. */
+    flex-wrap: wrap;
+    /* Sets the gap CSS property. */
+    gap: 10px;
+    /* Sets the justify-content CSS property. */
+    justify-content: center;
+    /* Sets the padding CSS property. */
+    padding: 18px 0;
+    /* Sets the background CSS property. */
+    background: rgba(11, 11, 11, 0.96);
+    /* Sets the border-bottom CSS property. */
+    border-bottom: 1px solid var(--border);
+}
+
+/* Begins this CSS rule or grouped selector. */
+.category-nav a {
+    /* Sets the padding CSS property. */
+    padding: 8px 18px;
+    /* Sets the border CSS property. */
+    border: 1px solid var(--border);
+    /* Sets the border-radius CSS property. */
+    border-radius: 999px;
+    /* Sets the font-size CSS property. */
+    font-size: 11px;
+    /* Sets the font-weight CSS property. */
+    font-weight: 600;
+    /* Sets the letter-spacing CSS property. */
+    letter-spacing: 0.14em;
+    /* Sets the text-transform CSS property. */
+    text-transform: uppercase;
+    /* Sets the color CSS property. */
+    color: var(--cream);
+    /* Sets the transition CSS property. */
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+        
+/* Begins this CSS rule or grouped selector. */
+.category-nav a:hover {
+    /* Sets the background CSS property. */
+    background: var(--gold);
+    /* Sets the color CSS property. */
+    color: var(--black);
+    /* Sets the border-color CSS property. */
+    border-color: var(--gold);
+}
+        
+/* Begins this CSS rule or grouped selector. */
+.catalog-category {
+    /* Sets the scroll-margin-top CSS property. */
+    scroll-margin-top: 70px;
+}
+        
+/* Begins this CSS rule or grouped selector. */
+.price-tag {
+    /* Sets the display CSS property. */
+    display: inline-block;
+    /* Sets the margin CSS property. */
     margin: 6px 0 14px;
+    /* Sets the color CSS property. */
     color: var(--gold-light);
+    /* Sets the font-family CSS property. */
     font-family: var(--font-display);
+    /* Sets the font-size CSS property. */
     font-size: 20px;
 }
