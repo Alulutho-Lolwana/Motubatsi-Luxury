@@ -223,7 +223,7 @@ nav ul a.active::after {
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.7)),
-        url("../Assets/images/hero.jpg") center/cover no-repeat;
+        url("../images/hero-background.jpeg") center/cover no-repeat;
 }
 
 .hero::after {
