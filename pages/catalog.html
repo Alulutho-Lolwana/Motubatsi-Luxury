@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse the full Motubatsi Luxury catalog — Basotho-inspired dresses, jackets, blankets and headwear.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Motubatsi Luxury | Catalog</title>
+    <style>
+        .category-nav {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 18px 0;
+            background: rgba(11, 11, 11, 0.96);
+            border-bottom: 1px solid var(--border);
+        }
+        .category-nav a {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--cream);
+            transition: background var(--transition), color var(--transition), border-color var(--transition);
+        }
+        .category-nav a:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+        .catalog-category {
+            scroll-margin-top: 70px;
+        }
+        .price-tag {
+            display: inline-block;
+            margin: 6px 0 14px;
+            color: var(--gold-light);
+            font-family: var(--font-display);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./our-story.html">Our Story</a></li>
+                        <li><a href="./product.html">Products</a></li>
+                        <li><a href="./catalog.html" class="active">Catalog</a></li>
+                        <li><a href="./enquiry.html">Enquiry</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="category-nav" aria-label="Catalog categories">
+        <a href="#dresses">Dresses</a>
+        <a href="#jackets">Jackets</a>
+        <a href="#blankets">Blankets &amp; Wraps</a>
+        <a href="#headwear">Headwear</a>
+    </nav>
+
+    <main>
+        <section>
+            <div class="container section-header">
+                <p class="section-eyebrow">Full Catalog</p>
+                <h1 class="section-title">Our Collections</h1>
+                <p class="section-text">
+                    Every piece in the Motubatsi Luxury catalog is Basotho-inspired and finished with
+                    modern, luxury detailing. Prices are available on enquiry — select a piece below and
+                    our team will get back to you with full details.
+                </p>
+            </div>
+        </section>
+
+        <!-- Dresses -->
+        <section id="dresses" class="catalog-category bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Category</p>
+                    <h2 class="section-title">Dresses</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/mokorotlo.jpeg" alt="Heritage Dress">
+                        </div>
+                        <div class="card-content">
+                            <h3>Heritage Dress</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A contemporary statement piece inspired by Basotho heritage, designed for elegant occasions.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/founder.jpeg" alt="Mokorotlo Evening Gown">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mokorotlo Evening Gown</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A floor-length gown with subtle mokorotlo-inspired silhouette lines, for formal events.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/ceo.jpeg" alt="Heritage Wrap Dress">
+                        </div>
+                        <div class="card-content">
+                            <h3>Heritage Wrap Dress</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A versatile wrap-style dress finished with hand-stitched detailing.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jackets -->
+        <section id="jackets" class="catalog-category">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Category</p>
+                    <h2 class="section-title">Jackets</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/founder-ceo.jpeg" alt="Luxury Heritage Jacket">
+                        </div>
+                        <div class="card-content">
+                            <h3>Luxury Heritage Jacket</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A sophisticated jacket combining modern tailoring with subtle Basotho-inspired elements.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/mokorotlo.jpeg" alt="Structured Blazer">
+                        </div>
+                        <div class="card-content">
+                            <h3>Structured Blazer</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A tailored blazer with a Basotho blanket-inspired lining, made for statement dressing.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blankets & Wraps -->
+        <section id="blankets" class="catalog-category bg-dark">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Category</p>
+                    <h2 class="section-title">Blankets &amp; Wraps</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/ceo.jpeg" alt="Basotho Blanket Collection">
+                        </div>
+                        <div class="card-content">
+                            <h3>Basotho Blanket Collection</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>Fashion pieces inspired by the iconic Basotho blanket and its connection to cultural identity.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/founder.jpeg" alt="Luxury Shawl">
+                        </div>
+                        <div class="card-content">
+                            <h3>Luxury Shawl</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>A lightweight shawl reworking traditional Basotho blanket patterns for everyday luxury.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Headwear -->
+        <section id="headwear" class="catalog-category">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Category</p>
+                    <h2 class="section-title">Headwear</h2>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="../assets/images/web-development.jpg" alt="Sotho Hat Collection">
+                        </div>
+                        <div class="card-content">
+                            <h3>Sotho Hat Collection</h3>
+                            <span class="price-tag">Enquire for pricing</span>
+                            <p>Contemporary pieces inspired by the mokorotlo, a distinctive symbol of Basotho culture.</p>
+                            <a href="./enquiry.html" class="btn btn-outline mt-2">Make an Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center" style="padding-top: 60px;">
+            <div class="container">
+                <h2 class="section-title">Don't See What You're Looking For?</h2>
+                <p class="section-text mb-2">We also take custom, made-to-order pieces for special occasions.</p>
+                <a href="./enquiry.html" class="btn">Request a Custom Piece</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            &copy; 2026 House of Motubatsi. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
