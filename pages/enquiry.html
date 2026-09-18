@@ -3,87 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motubatsi_Luxury | Enquiry</title>
-     <link rel="stylesheet" href"assets/css/styles.css">
+    <meta name="description" content="Send a product enquiry to Motubatsi Luxury.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <title>Motubatsi Luxury | Enquiry</title>
 </head>
 <body>
 
-    
-<header>
-    <!--Logo goes here-->
-    <img src="../assets/images/WhatsApp Image 2026-08-05 at 21.18.32.jpeg" width="120">
-    
-   <nav>
-      
-    <a href="index.html">Motubatsi_Luxury</a>
-       
-           
+    <header class="site-header">
+        <div class="navbar">
+            <div class="nav-container">
+                <a href="../index.html" class="brand">Motubatsi <span>Luxury</span></a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./our-story.html">Our Story</a></li>
+                        <li><a href="./product.html">Products</a></li>
+                        <li><a href="./enquiry.html" class="active">Enquiry</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+            </div>
+        </div>
+    </header>
 
-    <a href="../index.html">Home</a>
-    <a href="./about.html">About Us</a>
-    <a href="./product.html">Products</a>
-    <a href="./enquiry.html">Enquiry</a>
-    <a href="./contact.html">Contact</a>
-    <a href="./our story.html">Our Story</a>
-       
+    <main>
+        <section>
+            <div class="container section-header">
+                <p class="section-eyebrow">Begin Your Motubatsi Luxury Experience</p>
+                <h1 class="section-title">Product Enquiry</h1>
+                <p class="section-text">
+                    Interested in one of our pieces? Complete the form below and our team will respond
+                    with more information about your selected product.
+                </p>
+            </div>
+        </section>
 
-   </nav>
-</header>
+        <section class="contact">
+            <div class="container" style="max-width: 700px;">
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-<main>
-   <section>
-       <p>BEGIN YOUR Motubatsi_Luxury EXPERIENCE</p>
-       <h1>Product Enquiry</h1>
-       <p>
-           Interested in one of our pieces? Complete the form below and
-           our team will respond with more information about your selected product.
-       </p>
-   </section>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-   <section>
-       <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
 
-           <label for="name">Full Name</label>
-           <input type="text" id="name" name="name" required>
+                    <div class="form-group">
+                        <label for="product">Product</label>
+                        <select id="product" name="product" required>
+                            <option value="">Select a product</option>
+                            <option value="heritage-dress">Heritage Dress</option>
+                            <option value="heritage-jacket">Luxury Heritage Jacket</option>
+                            <option value="blanket">Basotho Blanket Collection</option>
+                            <option value="sotho-hat">Sotho Hat Collection</option>
+                        </select>
+                    </div>
 
-           <label for="email">Email Address</label>
-           <input type="email" id="email" name="email" required>
+                    <div class="form-group">
+                        <label for="size">Size</label>
+                        <select id="size" name="size">
+                            <option value="">Select a size</option>
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                            <option>Extra Large</option>
+                        </select>
+                    </div>
 
-           <label for="phone">Phone Number</label>
-           <input type="tel" id="phone" name="phone">
+                    <div class="form-group">
+                        <label for="message">Enquiry / Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
 
-           <label for="product">Product</label>
-           <select id="product" name="product" required>
-               <option value="">Select a product</option>
-               <option value="heritage-dress">Heritage Dress</option>
-               <option value="heritage-jacket">Luxury Heritage Jacket</option>
-               <option value="blanket">Basotho Blanket Collection</option>
-               <option value="sotho-hat">Sotho Hat Collection</option>
-           </select>
+                    <button type="submit" class="btn">Submit Enquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-           <label for="size">Size</label>
-           <select id="size" name="size">
-               <option value="">Select a size</option>
-               <option>Small</option>
-               <option>Medium</option>
-               <option>Large</option>
-               <option>Extra Large</option>
-           </select>
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+            &copy; 2026 House of Motubatsi. All rights reserved.
+        </div>
+    </footer>
 
-           <label for="message">Enquiry / Message</label>
-           <textarea id="message" name="message" rows="6" required></textarea>
-
-           <button type="submit">Submit Enquiry</button>
-       </form>
-   </section>
-</main>
-
-<footer>
-   <p>&copy; 2026 House of Motubatsi. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
-    
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
