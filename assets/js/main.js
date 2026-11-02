@@ -246,37 +246,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // Accessible validation and real AJAX submission for contact and product enquiry forms.
+    // JavaScript-only validation and AJAX submission for the contact and product enquiry forms.
     document.querySelectorAll('.validated-form').forEach(function (form) {
         var status = form.querySelector('[data-form-status]');
         var submitButton = form.querySelector('[type="submit"]');
         var originalButtonText = submitButton ? submitButton.textContent : 'Submit';
 
-        function errorMessage(field) {
-            if (field.validity.valueMissing) return 'Please complete this field.';
-            if (field.validity.typeMismatch) return 'Please enter a valid email address.';
-            if (field.validity.tooShort) return 'Please enter at least ' + field.minLength + ' characters.';
-            if (field.validity.tooLong) return 'Please shorten this entry.';
-            if (field.validity.rangeUnderflow) return 'Please enter at least ' + field.min + '.';
-            if (field.validity.rangeOverflow) return 'Please enter no more than ' + field.max + '.';
-            if (field.validity.stepMismatch) return 'Please enter a valid number.';
-            if (field.validity.patternMismatch) return field.title || 'Please use the requested format.';
-            return 'Please check this field.';
+        function validateField(field) {
+            var value = field.value.trim();
+            var message = '';
+            var required = field.dataset.required === 'true';
+            var minLength = Number(field.dataset.minLength || 0);
+            var maxLength = Number(field.dataset.maxLength || 0);
+
+            if (required && !value) message = 'Please complete this field.';
+            else if (value && field.dataset.rule === 'email' &&
+                !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(value)) {
+                message = 'Please enter a valid email address.';
+            } else if (value && field.dataset.rule === 'phone' &&
+                !/^[+0-9() .-]{7,20}$/.test(value)) {
+                message = 'Enter a phone number using 7 to 20 digits or phone symbols.';
+            } else if (value && field.dataset.rule === 'integer' &&
+                (!/^\\d+$/.test(value) || Number(value) < Number(field.dataset.min) ||
+                 Number(value) > Number(field.dataset.max))) {
+                message = 'Enter a whole number between ' + field.dataset.min + ' and ' + field.dataset.max + '.';
+            } else if (value && minLength && value.length < minLength) {
+                message = 'Please enter at least ' + minLength + ' characters.';
+            } else if (value && maxLength && value.length > maxLength) {
+                message = 'Please use no more than ' + maxLength + ' characters.';
+            }
+
+            clearError(field);
+            if (message) showError(field, message);
+            return !message;
         }
 
         function clearError(field) {
-            field.setCustomValidity('');
             field.removeAttribute('aria-invalid');
+            var describedBy = field.getAttribute('aria-describedby');
+            if (describedBy && describedBy === field.id + '-error') {
+                field.removeAttribute('aria-describedby');
+            }
             var group = field.closest('.form-group');
             var error = group && group.querySelector('.field-error');
             if (error) error.remove();
         }
 
-        function showError(field) {
+        function showError(field, message) {
             var group = field.closest('.form-group');
             if (!group) return;
-            clearError(field);
-            var message = errorMessage(field);
             field.setAttribute('aria-invalid', 'true');
             var error = document.createElement('span');
             error.className = 'field-error';
@@ -286,15 +304,16 @@ document.addEventListener('DOMContentLoaded', function () {
             group.appendChild(error);
         }
 
+        function fields() {
+            return Array.prototype.slice.call(
+                form.querySelectorAll('input:not([type="hidden"]), select, textarea')
+            );
+        }
+
         function validateForm() {
-            var fields = Array.prototype.slice.call(form.querySelectorAll('input:not([type="hidden"]), select, textarea'));
             var firstInvalid = null;
-            fields.forEach(function (field) {
-                clearError(field);
-                if (!field.checkValidity()) {
-                    showError(field);
-                    if (!firstInvalid) firstInvalid = field;
-                }
+            fields().forEach(function (field) {
+                if (!validateField(field) && !firstInvalid) firstInvalid = field;
             });
             if (firstInvalid) {
                 firstInvalid.focus();
@@ -304,18 +323,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         form.addEventListener('input', function (event) {
-            if (event.target.matches('input, select, textarea')) {
-                clearError(event.target);
-                if (!event.target.checkValidity()) showError(event.target);
-            }
+            if (event.target.matches('input, select, textarea')) validateField(event.target);
         });
         form.addEventListener('change', function (event) {
-            if (event.target.matches('input, select, textarea')) {
-                clearError(event.target);
-                if (!event.target.checkValidity()) showError(event.target);
-            }
+            if (event.target.matches('input, select, textarea')) validateField(event.target);
         });
-
         form.addEventListener('submit', async function (event) {
             event.preventDefault();
             if (!validateForm()) {
@@ -342,9 +354,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!response.ok || (result.success !== true && result.success !== 'true')) {
                     throw new Error(result.message || 'The form service could not accept your message.');
                 }
-
                 form.reset();
-                form.querySelectorAll('input:not([type="hidden"]), select, textarea').forEach(clearError);
+                fields().forEach(clearError);
                 status.textContent = form.dataset.formType === 'enquiry'
                     ? 'Thank you for your product enquiry. Your details have been submitted successfully. Our team will contact you soon.'
                     : 'Thank you for contacting Motubatsi Luxury. Your message has been submitted successfully. Our team will get back to you soon.';

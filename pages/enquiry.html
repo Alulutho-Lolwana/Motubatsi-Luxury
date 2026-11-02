@@ -128,29 +128,29 @@
                 <!-- Creates a centered content container with a maximum width of 700 pixels. -->
                 <!-- The inline style limits the width of the enquiry form for easier reading. -->
 
-                <form class="contact-form validated-form" action="https://formsubmit.co/ajax/info@Motubatsi.com" method="POST" data-form-type="enquiry">
+                <form class="contact-form validated-form" novalidate action="https://formsubmit.co/ajax/info@Motubatsi.com" method="POST" data-form-type="enquiry">
                     <input type="hidden" name="_subject" value="New product enquiry — Motubatsi Luxury">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="true">
 
                     <div class="form-group">
                         <label for="enquiry-name">Full Name</label>
-                        <input type="text" id="enquiry-name" name="name" autocomplete="name" minlength="2" maxlength="80" placeholder="Enter your full name" required>
+                        <input type="text" id="enquiry-name" name="name" autocomplete="name" placeholder="Enter your full name" data-required="true" data-min-length="2" data-max-length="80">
                     </div>
 
                     <div class="form-group">
                         <label for="enquiry-email">Email Address</label>
-                        <input type="email" id="enquiry-email" name="email" autocomplete="email" maxlength="120" placeholder="Enter your email address" required>
+                        <input type="email" id="enquiry-email" name="email" autocomplete="email" placeholder="Enter your email address" data-required="true" data-rule="email" data-max-length="120">
                     </div>
 
                     <div class="form-group">
                         <label for="enquiry-phone">Phone Number (optional)</label>
-                        <input type="tel" id="enquiry-phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() .-]{7,20}" title="Enter a phone number using 7 to 20 digits or phone symbols.">
+                        <input type="tel" id="enquiry-phone" name="phone" autocomplete="tel" inputmode="tel" data-rule="phone">
                     </div>
 
                     <div class="form-group">
                         <label for="enquiry-product">Product</label>
-                        <select id="enquiry-product" name="product" required>
+                        <select id="enquiry-product" name="product" data-required="true">
                             <option value="">Select a product</option>
                             <option value="Heritage Dress">Heritage Dress</option>
                             <option value="Luxury Heritage Jacket">Luxury Heritage Jacket</option>
@@ -173,12 +173,12 @@
 
                     <div class="form-group">
                         <label for="enquiry-quantity">Quantity</label>
-                        <input type="number" id="enquiry-quantity" name="quantity" min="1" max="50" step="1" value="1" required>
+                        <input type="number" id="enquiry-quantity" name="quantity" value="1" data-required="true" data-rule="integer" data-min="1" data-max="50">
                     </div>
 
                     <div class="form-group">
                         <label for="enquiry-message">Enquiry Details</label>
-                        <textarea id="enquiry-message" name="message" rows="6" minlength="10" maxlength="3000" placeholder="Tell us what you would like to know about this product, availability, customisation or ordering." required></textarea>
+                        <textarea id="enquiry-message" name="message" rows="6" placeholder="Tell us what you would like to know about this product, availability, customisation or ordering." data-required="true" data-min-length="10" data-max-length="3000"></textarea>
                     </div>
 
                     <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
