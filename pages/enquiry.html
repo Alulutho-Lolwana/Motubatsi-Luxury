@@ -128,133 +128,61 @@
                 <!-- Creates a centered content container with a maximum width of 700 pixels. -->
                 <!-- The inline style limits the width of the enquiry form for easier reading. -->
 
-                <form class="contact-form" action="#" method="post">
-                    <!-- Creates the product enquiry form. -->
-                    <!-- The contact-form class applies the site's form styling. -->
-                    <!-- action="#" currently points the form submission back to the current page. -->
-                    <!-- method="post" sends form data using the HTTP POST method. -->
+                <form class="contact-form validated-form" action="https://formsubmit.co/ajax/info@Motubatsi.com" method="POST" data-form-type="enquiry">
+                    <input type="hidden" name="_subject" value="New product enquiry — Motubatsi Luxury">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
 
                     <div class="form-group">
-                        <!-- Groups the full-name label and input field together. -->
-
-                        <label for="name">Full Name</label>
-                        <!-- Labels the name input field. -->
-                        <!-- The for attribute connects this label to the input with id="name". -->
-
-                        <input type="text" id="name" name="name" required>
-                        <!-- Creates a required text input for the customer's full name. -->
-                        <!-- id uniquely identifies the field and connects it to the label. -->
-                        <!-- name identifies the field when form data is submitted. -->
-                        <!-- required prevents submission until a value is entered. -->
-
+                        <label for="enquiry-name">Full Name</label>
+                        <input type="text" id="enquiry-name" name="name" autocomplete="name" minlength="2" maxlength="80" placeholder="Enter your full name" required>
                     </div>
-                    <!-- Closes the full-name form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the email label and input field together. -->
-
-                        <label for="email">Email Address</label>
-                        <!-- Labels the email input field. -->
-
-                        <input type="email" id="email" name="email" required>
-                        <!-- Creates a required email input. -->
-                        <!-- type="email" enables browser validation for a standard email format. -->
-
+                        <label for="enquiry-email">Email Address</label>
+                        <input type="email" id="enquiry-email" name="email" autocomplete="email" maxlength="120" placeholder="Enter your email address" required>
                     </div>
-                    <!-- Closes the email form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the phone label and input field together. -->
-
-                        <label for="phone">Phone Number</label>
-                        <!-- Labels the phone-number input field. -->
-
-                        <input type="tel" id="phone" name="phone">
-                        <!-- Creates a telephone-number input field. -->
-                        <!-- This field is optional because it does not contain the required attribute. -->
-
+                        <label for="enquiry-phone">Phone Number (optional)</label>
+                        <input type="tel" id="enquiry-phone" name="phone" autocomplete="tel" inputmode="tel" pattern="[+0-9() .-]{7,20}" title="Enter a phone number using 7 to 20 digits or phone symbols.">
                     </div>
-                    <!-- Closes the phone form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the product label and selection menu together. -->
-
-                        <label for="product">Product</label>
-                        <!-- Labels the product selection dropdown. -->
-
-                        <select id="product" name="product" required>
-                            <!-- Creates a required dropdown for choosing a product. -->
-
+                        <label for="enquiry-product">Product</label>
+                        <select id="enquiry-product" name="product" required>
                             <option value="">Select a product</option>
-                            <!-- Provides the initial empty product selection. -->
-
-                            <option value="heritage-dress">Heritage Dress</option>
-                            <!-- Adds the Heritage Dress as a selectable product. -->
-
-                            <option value="heritage-jacket">Luxury Heritage Jacket</option>
-                            <!-- Adds the Luxury Heritage Jacket as a selectable product. -->
-
-                            <option value="blanket">Basotho Blanket Collection</option>
-                            <!-- Adds the Basotho Blanket Collection as a selectable product. -->
-
-                            <option value="sotho-hat">Sotho Hat Collection</option>
-                            <!-- Adds the Sotho Hat Collection as a selectable product. -->
-
+                            <option value="Heritage Dress">Heritage Dress</option>
+                            <option value="Luxury Heritage Jacket">Luxury Heritage Jacket</option>
+                            <option value="Basotho Blanket Collection">Basotho Blanket Collection</option>
+                            <option value="Sotho Hat Collection">Sotho Hat Collection</option>
+                            <option value="Other / custom piece">Other / custom piece</option>
                         </select>
-                        <!-- Closes the product selection dropdown. -->
-
                     </div>
-                    <!-- Closes the product form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the size label and selection menu together. -->
-
-                        <label for="size">Size</label>
-                        <!-- Labels the size selection dropdown. -->
-
-                        <select id="size" name="size">
-                            <!-- Creates a dropdown for selecting a product size. -->
-                            <!-- This field is optional because it does not have the required attribute. -->
-
-                            <option value="">Select a size</option>
-                            <!-- Provides the initial empty size selection. -->
-
-                            <option>Small</option>
-                            <!-- Adds Small as a selectable size. -->
-
-                            <option>Medium</option>
-                            <!-- Adds Medium as a selectable size. -->
-
-                            <option>Large</option>
-                            <!-- Adds Large as a selectable size. -->
-
-                            <option>Extra Large</option>
-                            <!-- Adds Extra Large as a selectable size. -->
-
+                        <label for="enquiry-size">Preferred Size (if applicable)</label>
+                        <select id="enquiry-size" name="size">
+                            <option value="">Not applicable / not sure</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="Extra Large">Extra Large</option>
                         </select>
-                        <!-- Closes the size selection dropdown. -->
-
                     </div>
-                    <!-- Closes the size form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the enquiry/message label and text area together. -->
-
-                        <label for="message">Enquiry / Message</label>
-                        <!-- Labels the message text area. -->
-
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                        <!-- Creates a required multi-line message field. -->
-                        <!-- rows="6" gives the text area an initial height of approximately six lines. -->
-
+                        <label for="enquiry-quantity">Quantity</label>
+                        <input type="number" id="enquiry-quantity" name="quantity" min="1" max="50" step="1" value="1" required>
                     </div>
-                    <!-- Closes the message form group. -->
 
-                    <button type="submit" class="btn">Submit Enquiry</button>
-                    <!-- Creates the form submission button. -->
-                    <!-- type="submit" tells the browser to submit the form when clicked. -->
-                    <!-- The btn class applies the website's button styling. -->
+                    <div class="form-group">
+                        <label for="enquiry-message">Enquiry Details</label>
+                        <textarea id="enquiry-message" name="message" rows="6" minlength="10" maxlength="3000" placeholder="Tell us what you would like to know about this product, availability, customisation or ordering." required></textarea>
+                    </div>
 
+                    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+                    <button type="submit" class="btn">Send Product Enquiry</button>
                 </form>
                 <!-- Closes the product enquiry form. -->
 

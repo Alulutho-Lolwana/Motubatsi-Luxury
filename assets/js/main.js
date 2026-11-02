@@ -245,6 +245,124 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+
+    // Accessible validation and real AJAX submission for contact and product enquiry forms.
+    document.querySelectorAll('.validated-form').forEach(function (form) {
+        var status = form.querySelector('[data-form-status]');
+        var submitButton = form.querySelector('[type="submit"]');
+        var originalButtonText = submitButton ? submitButton.textContent : 'Submit';
+
+        function errorMessage(field) {
+            if (field.validity.valueMissing) return 'Please complete this field.';
+            if (field.validity.typeMismatch) return 'Please enter a valid email address.';
+            if (field.validity.tooShort) return 'Please enter at least ' + field.minLength + ' characters.';
+            if (field.validity.tooLong) return 'Please shorten this entry.';
+            if (field.validity.rangeUnderflow) return 'Please enter at least ' + field.min + '.';
+            if (field.validity.rangeOverflow) return 'Please enter no more than ' + field.max + '.';
+            if (field.validity.stepMismatch) return 'Please enter a valid number.';
+            if (field.validity.patternMismatch) return field.title || 'Please use the requested format.';
+            return 'Please check this field.';
+        }
+
+        function clearError(field) {
+            field.setCustomValidity('');
+            field.removeAttribute('aria-invalid');
+            var group = field.closest('.form-group');
+            var error = group && group.querySelector('.field-error');
+            if (error) error.remove();
+        }
+
+        function showError(field) {
+            var group = field.closest('.form-group');
+            if (!group) return;
+            clearError(field);
+            var message = errorMessage(field);
+            field.setAttribute('aria-invalid', 'true');
+            var error = document.createElement('span');
+            error.className = 'field-error';
+            error.id = field.id + '-error';
+            error.textContent = message;
+            field.setAttribute('aria-describedby', error.id);
+            group.appendChild(error);
+        }
+
+        function validateForm() {
+            var fields = Array.prototype.slice.call(form.querySelectorAll('input:not([type="hidden"]), select, textarea'));
+            var firstInvalid = null;
+            fields.forEach(function (field) {
+                clearError(field);
+                if (!field.checkValidity()) {
+                    showError(field);
+                    if (!firstInvalid) firstInvalid = field;
+                }
+            });
+            if (firstInvalid) {
+                firstInvalid.focus();
+                return false;
+            }
+            return true;
+        }
+
+        form.addEventListener('input', function (event) {
+            if (event.target.matches('input, select, textarea')) {
+                clearError(event.target);
+                if (!event.target.checkValidity()) showError(event.target);
+            }
+        });
+        form.addEventListener('change', function (event) {
+            if (event.target.matches('input, select, textarea')) {
+                clearError(event.target);
+                if (!event.target.checkValidity()) showError(event.target);
+            }
+        });
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+            if (!validateForm()) {
+                status.textContent = 'Please correct the highlighted fields before submitting.';
+                status.className = 'form-status is-error';
+                status.focus();
+                return;
+            }
+
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+            status.textContent = 'Sending your message securely...';
+            status.className = 'form-status is-pending';
+
+            try {
+                var response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+                var result = await response.json();
+                if (!response.ok || (result.success !== true && result.success !== 'true')) {
+                    throw new Error(result.message || 'The form service could not accept your message.');
+                }
+
+                form.reset();
+                form.querySelectorAll('input:not([type="hidden"]), select, textarea').forEach(clearError);
+                status.textContent = form.dataset.formType === 'enquiry'
+                    ? 'Thank you for your product enquiry. Your details have been submitted successfully. Our team will contact you soon.'
+                    : 'Thank you for contacting Motubatsi Luxury. Your message has been submitted successfully. Our team will get back to you soon.';
+                status.className = 'form-status is-success';
+                status.focus();
+            } catch (error) {
+                status.textContent = 'We could not submit your message. Please try again, or email info@Motubatsi.com directly. Your message has not been confirmed as sent.';
+                status.className = 'form-status is-error';
+                status.focus();
+            } finally {
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }
+            }
+        });
+    });
+
     // Accessible image gallery lightbox, following the Campus Cart interaction pattern.
     // Only meaningful content images inside <main> are viewable. Linked images, controls,
     // maps and explicitly excluded images are left untouched.

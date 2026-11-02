@@ -171,86 +171,40 @@
                 </div>
                 <!-- Closes the contact details container. -->
 
-                <form class="contact-form" action="#" method="post">
-                    <!-- Creates the contact form. -->
-                    <!-- action="#" currently submits back to the same page because no server endpoint is specified. -->
-                    <!-- method="post" sends the submitted form data using the HTTP POST method. -->
+                <form class="contact-form validated-form" action="https://formsubmit.co/ajax/info@Motubatsi.com" method="POST" data-form-type="contact">
+                    <input type="hidden" name="_subject" value="New general contact message — Motubatsi Luxury">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
 
                     <div class="form-group">
-                        <!-- Groups the name label and input together. -->
-
-                        <label for="name">Your Name</label>
-                        <!-- Labels the name input for users and assistive technologies. -->
-
-                        <input type="text" id="name" name="name" placeholder="Tell us who you are" required>
-                        <!-- Creates a required text field for the visitor's name. -->
+                        <label for="contact-name">Your Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="Tell us who you are" autocomplete="name" minlength="2" maxlength="80" required>
                     </div>
-                    <!-- Closes the name form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the email label and input together. -->
-
-                        <label for="email">Email Address</label>
-                        <!-- Labels the email input field. -->
-
-                        <input type="email" id="email" name="email" placeholder="Where we can reply to you" required>
-                        <!-- Creates a required email field and enables browser email-format validation. -->
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" placeholder="Where we can reply to you" autocomplete="email" maxlength="120" required>
                     </div>
-                    <!-- Closes the email form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the project-type label and select menu together. -->
-
-                        <label for="proj_type">Project Type</label>
-                        <!-- Labels the project-type selection field. -->
-
-                        <select id="proj_type" name="proj_type" required>
-                            <!-- Creates a required dropdown menu for selecting a project type. -->
-
-                            <option value="">--Select--</option>
-                            <!-- Provides the default empty selection. -->
-
-                            <option value="web-development">Web Development</option>
-                            <!-- Adds Web Development as a project-type option. -->
-
-                            <option value="e-commerce">e-Commerce</option>
-                            <!-- Adds e-Commerce as a project-type option. -->
-
-                            <option value="redesign">Redesign</option>
-                            <!-- Adds Redesign as a project-type option. -->
-
+                        <label for="contact-subject">What is your message about?</label>
+                        <select id="contact-subject" name="subject" required>
+                            <option value="">Select a topic</option>
+                            <option value="General question">General question</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Partnership or collaboration">Partnership or collaboration</option>
+                            <option value="Press or media">Press or media</option>
+                            <option value="Other">Other</option>
                         </select>
-                        <!-- Closes the project-type dropdown. -->
                     </div>
-                    <!-- Closes the project-type form group. -->
 
                     <div class="form-group">
-                        <!-- Groups the budget label and input together. -->
-
-                        <label for="budget">Estimated Budget</label>
-                        <!-- Labels the estimated-budget field. -->
-
-                        <input type="number" id="budget" name="budget" min="0" placeholder="Help us suggest the right solution" required>
-                        <!-- Creates a required numeric budget field. -->
-                        <!-- min="0" prevents values below zero through standard browser validation. -->
+                        <label for="contact-message">Your Message</label>
+                        <textarea id="contact-message" name="message" rows="6" minlength="10" maxlength="3000" placeholder="How can our team help you?" required></textarea>
                     </div>
-                    <!-- Closes the budget form group. -->
 
-                    <div class="form-group">
-                        <!-- Groups the message label and textarea together. -->
-
-                        <label for="message">Message</label>
-                        <!-- Labels the message field. -->
-
-                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your goals and timeline" required></textarea>
-                        <!-- Creates a required multi-line text area for the visitor's message. -->
-                        <!-- rows="6" gives the field an initial height of approximately six text lines. -->
-                    </div>
-                    <!-- Closes the message form group. -->
-
-                    <button type="submit" class="btn">Submit</button>
-                    <!-- Creates the form submission button and applies the site's button styling. -->
-
+                    <p class="form-status" data-form-status role="status" aria-live="polite" tabindex="-1"></p>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
                 <!-- Closes the contact form. -->
 

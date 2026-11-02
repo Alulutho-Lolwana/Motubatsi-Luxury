@@ -1688,3 +1688,53 @@ body.lightbox-open {
     }
     .cursor-follow { display: none !important; }
 }
+
+
+/* ---------- Accessible form validation and submission feedback ---------- */
+.validated-form .form-group input[aria-invalid="true"],
+.validated-form .form-group select[aria-invalid="true"],
+.validated-form .form-group textarea[aria-invalid="true"] {
+    border-color: #e58b83;
+    box-shadow: 0 0 0 2px rgba(229, 139, 131, 0.12);
+}
+.field-error {
+    display: block;
+    margin-top: 2px;
+    color: #f0a39b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.form-status {
+    display: none;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-size: 13px;
+    line-height: 1.65;
+}
+.form-status.is-pending,
+.form-status.is-success,
+.form-status.is-error { display: block; }
+.form-status.is-pending {
+    color: var(--cream);
+    border-color: rgba(200, 169, 107, 0.45);
+    background: rgba(200, 169, 107, 0.08);
+}
+.form-status.is-success {
+    color: #bfe5c7;
+    border-color: rgba(112, 184, 130, 0.5);
+    background: rgba(66, 139, 85, 0.12);
+}
+.form-status.is-error {
+    color: #ffc1b9;
+    border-color: rgba(229, 139, 131, 0.55);
+    background: rgba(160, 55, 48, 0.12);
+}
+.validated-form button[type="submit"]:disabled {
+    cursor: wait;
+    opacity: 0.7;
+    transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .form-status { transition: none !important; }
+}
