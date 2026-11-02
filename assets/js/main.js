@@ -136,6 +136,33 @@ document.addEventListener('DOMContentLoaded', function () {
         renderProducts();
     }
 
+    // Reveal page sections and cards as they enter the viewport.
+    // Motion is disabled when the visitor requests reduced motion.
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) {
+        var revealItems = document.querySelectorAll('main section, main .card, main .about-image, main .about-content, .faq-item');
+        if ('IntersectionObserver' in window) {
+            var revealObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+            revealItems.forEach(function (item) {
+                item.classList.add('reveal-on-scroll');
+                revealObserver.observe(item);
+            });
+        } else {
+            revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+        }
+    } else {
+        document.querySelectorAll('main section, main .card, main .about-image, main .about-content, .faq-item').forEach(function (item) {
+            item.classList.add('is-visible');
+        });
+    }
+
     // Accessible image gallery lightbox, following the Campus Cart interaction pattern.
     // Only meaningful content images inside <main> are viewable. Linked images, controls,
     // maps and explicitly excluded images are left untouched.
