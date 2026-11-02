@@ -254,6 +254,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function validateField(field) {
             var value = field.value.trim();
+            // Reject hidden control characters and enforce configured length limits before submission.
+            if (/[\\u0000-\\u001F\\u007F]/.test(value)) message = 'Please remove unsupported control characters.';
             var message = '';
             var required = field.dataset.required === 'true';
             var minLength = Number(field.dataset.minLength || 0);
@@ -263,16 +265,16 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (value && field.dataset.rule === 'email' &&
                 !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(value)) {
                 message = 'Please enter a valid email address.';
-            } else if (value && field.dataset.rule === 'phone' &&
-                !/^[+0-9() .-]{7,20}$/.test(value)) {
+            } else if (!message && value && field.dataset.rule === 'phone' &&
+                (!/^[+0-9() .-]{7,20}$/.test(value) || (value.match(/[0-9]/g) || []).length < 7)) {
                 message = 'Enter a phone number using 7 to 20 digits or phone symbols.';
             } else if (value && field.dataset.rule === 'integer' &&
                 (!/^\\d+$/.test(value) || Number(value) < Number(field.dataset.min) ||
                  Number(value) > Number(field.dataset.max))) {
                 message = 'Enter a whole number between ' + field.dataset.min + ' and ' + field.dataset.max + '.';
-            } else if (value && minLength && value.length < minLength) {
+            } else if (!message && value && minLength && value.length < minLength) {
                 message = 'Please enter at least ' + minLength + ' characters.';
-            } else if (value && maxLength && value.length > maxLength) {
+            } else if (!message && value && maxLength && value.length > maxLength) {
                 message = 'Please use no more than ' + maxLength + ' characters.';
             }
 
@@ -348,6 +350,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 var response = await fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
+                    mode: 'cors',
+                    credentials: 'omit',
+                    redirect: 'error',
+                    referrerPolicy: 'strict-origin-when-cross-origin',
                     headers: { 'Accept': 'application/json' }
                 });
                 var result = await response.json();
