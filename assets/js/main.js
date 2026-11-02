@@ -388,9 +388,11 @@ document.addEventListener('DOMContentLoaded', function () {
             status.className = 'form-status is-pending';
 
             try {
-                var response = await fetch(form.action, {
+                var formData = new FormData(form);
+                formData.append('access_key', '2a40792c-0ace-4895-9a68-4a59562f3963');
+                var response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: new FormData(form),
+                    body: formData,
                     mode: 'cors',
                     credentials: 'omit',
                     redirect: 'error',
@@ -398,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     headers: { 'Accept': 'application/json' }
                 });
                 var result = await response.json();
-                if (!response.ok || (result.success !== true && result.success !== 'true')) {
+                if (!response.ok || result.success !== true) {
                     throw new Error(result.message || 'The form service could not accept your message.');
                 }
                 form.reset();
