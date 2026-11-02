@@ -35,6 +35,27 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Mokorotlo Hat Pair', category: 'headwear', image: '../assets/images/Mokorotlo.jpeg', description: 'A pair of hand-crafted Basotho mokorotlo hats, showcasing traditional woven form and colourful detailing.' },
             { name: 'Heritage Blanket & Mokorotlo Set', category: 'blankets', image: '../assets/images/background.image.jpeg', description: 'A Basotho-inspired heritage ensemble featuring a traditional blanket and mokorotlo, styled together in a scenic setting.' }
         ];
+        products.push(
+            { name: "Crimson Heritage Dress", category: "dresses", image: "../assets/images/Dress 1.jpeg", color: "Crimson", description: "A rich crimson colourway of the Heritage Dress, offering a bold alternative for elegant occasions." },
+            { name: "Ivory Heritage Dress", category: "dresses", image: "../assets/images/Dress 2.jpeg", color: "Ivory", description: "An ivory colourway of the Heritage Dress, bringing a soft and timeless finish to the modern silhouette." },
+            { name: "Midnight Heritage Dress", category: "dresses", image: "../assets/images/Dress 3.jpeg", color: "Midnight", description: "A midnight colourway of the Heritage Dress for a refined, understated statement." },
+            { name: "Emerald Heritage Dress", category: "dresses", image: "../assets/images/Dress 4.jpeg", color: "Emerald", description: "An emerald colourway of the Heritage Dress, adding a vibrant tone to the heritage-inspired design." },
+            { name: "Sandstone Basotho Jacket", category: "jackets", image: "../assets/images/Basotho jacket 1.jpeg", color: "Sandstone", description: "A sandstone colourway of the Basotho Jacket, designed for versatile contemporary styling." },
+            { name: "Royal Blue Basotho Jacket", category: "jackets", image: "../assets/images/Basotho jacket 2.jpeg", color: "Royal Blue", description: "A royal blue colourway of the Basotho Jacket with a confident, striking character." },
+            { name: "Charcoal Basotho Jacket", category: "jackets", image: "../assets/images/Basotho jacket 3.jpeg", color: "Charcoal", description: "A charcoal colourway of the Basotho Jacket for a classic and polished look." },
+            { name: "Burgundy Basotho Jacket", category: "jackets", image: "../assets/images/Basotho jacket 4.jpeg", color: "Burgundy", description: "A burgundy colourway of the Basotho Jacket, bringing depth to heritage-inspired outerwear." },
+            { name: "Ochre Khobo Wrap", category: "blankets", image: "../assets/images/Khobo 1.jpeg", color: "Ochre", description: "An ochre colourway of the Khobo collection, inspired by the warmth of traditional Basotho textiles." },
+            { name: "Indigo Khobo Wrap", category: "blankets", image: "../assets/images/Khobo 2.jpeg", color: "Indigo", description: "An indigo colourway of the Khobo collection, designed as a distinctive heritage layer." },
+            { name: "Forest Khobo Wrap", category: "blankets", image: "../assets/images/Khobo 3.jpeg", color: "Forest Green", description: "A forest green colourway of the Khobo collection with a grounded, natural character." },
+            { name: "Rust Khobo Wrap", category: "blankets", image: "../assets/images/Khobo 4.jpeg", color: "Rust", description: "A rust colourway of the Khobo collection, celebrating warm earthy tones." },
+            { name: "Cream Khobo Wrap", category: "blankets", image: "../assets/images/Khobo 5.jpeg", color: "Cream", description: "A cream colourway of the Khobo collection for a soft, understated heritage look." },
+            { name: "Natural Woven Mokorotlo", category: "headwear", image: "../assets/images/Mokorotlo 1.jpeg", color: "Natural", description: "A natural-toned colourway of the Mokorotlo headwear collection, celebrating Basotho identity." },
+            { name: "Ebony Mokorotlo", category: "headwear", image: "../assets/images/Mokorotlo 2.jpeg", color: "Ebony", description: "An ebony colourway of the Mokorotlo headwear collection with a bold, classic finish." },
+            { name: "Copper Mokorotlo", category: "headwear", image: "../assets/images/Mokorotlo 3.jpeg", color: "Copper", description: "A copper colourway of the Mokorotlo headwear collection, inspired by warm earth tones." },
+            { name: "Slate Mokorotlo", category: "headwear", image: "../assets/images/Mokorotlo 4.jpeg", color: "Slate", description: "A slate colourway of the Mokorotlo headwear collection for a contemporary heritage statement." },
+            { name: "Mokorotlo Duo — Earth Tones", category: "headwear", image: "../assets/images/Mokorotlo.jpeg", color: "Earth Tones", description: "An earth-toned colourway of the Mokorotlo Hat Pair, celebrating traditional woven form." },
+            { name: "Heritage Blanket & Mokorotlo Set — Classic", category: "blankets", image: "../assets/images/background.image.jpeg", color: "Classic", description: "A classic colourway of the Heritage Blanket and Mokorotlo ensemble, styled as a coordinated set." }
+        );
         var searchInput = document.getElementById('catalog-search');
         var sortSelect = document.getElementById('catalog-sort');
         var resultCount = document.getElementById('catalog-results');
@@ -83,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var content = makeCatalogElement('div', 'card-content');
                 content.appendChild(makeCatalogElement('p', 'catalog-product-category', product.category));
                 content.appendChild(makeCatalogElement('h3', '', product.name));
+                if (product.color) content.appendChild(makeCatalogElement('p', 'catalog-product-color', 'Colour: ' + product.color));
                 content.appendChild(makeCatalogElement('span', 'price-tag', 'Enquire for pricing'));
                 content.appendChild(makeCatalogElement('p', '', product.description));
 
