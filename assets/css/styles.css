@@ -1243,3 +1243,21 @@ footer p,
         height: 320px;
     }
 }
+
+
+/* Map fallback and popup styling, following the Campus-Cart map pattern. */
+.office-map.map-unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    height: auto;
+    padding: 24px;
+    color: var(--cream);
+    text-align: center;
+    background: var(--charcoal);
+}
+.map-popup p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
