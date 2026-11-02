@@ -254,27 +254,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function validateField(field) {
             var value = field.value.trim();
-            // Reject hidden control characters and enforce configured length limits before submission.
-            if (/[\\u0000-\\u001F\\u007F]/.test(value)) message = 'Please remove unsupported control characters.';
             var message = '';
             var required = field.dataset.required === 'true';
             var minLength = Number(field.dataset.minLength || 0);
             var maxLength = Number(field.dataset.maxLength || 0);
 
-            if (required && !value) message = 'Please complete this field.';
-            else if (value && field.dataset.rule === 'email' &&
-                !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(value)) {
+            if (/[\u0000-\u001F\u007F]/.test(value)) {
+                message = 'Please remove unsupported control characters.';
+            } else if (required && !value) {
+                message = 'Please complete this field.';
+            } else if (value && field.dataset.rule === 'email' &&
+                !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
                 message = 'Please enter a valid email address.';
-            } else if (!message && value && field.dataset.rule === 'phone' &&
+            } else if (value && field.dataset.rule === 'phone' &&
                 (!/^[+0-9() .-]{7,20}$/.test(value) || (value.match(/[0-9]/g) || []).length < 7)) {
                 message = 'Enter a phone number using 7 to 20 digits or phone symbols.';
             } else if (value && field.dataset.rule === 'integer' &&
-                (!/^\\d+$/.test(value) || Number(value) < Number(field.dataset.min) ||
+                (!/^\d+$/.test(value) || Number(value) < Number(field.dataset.min) ||
                  Number(value) > Number(field.dataset.max))) {
                 message = 'Enter a whole number between ' + field.dataset.min + ' and ' + field.dataset.max + '.';
-            } else if (!message && value && minLength && value.length < minLength) {
+            } else if (value && minLength && value.length < minLength) {
                 message = 'Please enter at least ' + minLength + ' characters.';
-            } else if (!message && value && maxLength && value.length > maxLength) {
+            } else if (value && maxLength && value.length > maxLength) {
                 message = 'Please use no more than ' + maxLength + ' characters.';
             }
 
