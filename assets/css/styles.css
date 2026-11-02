@@ -1889,3 +1889,26 @@ body.lightbox-open {
   .brand { gap: 0.45rem; }
   .brand-logo { width: 40px; height: 40px; flex-basis: 40px; }
 }
+
+
+/* ---------- Additional tablet and narrow-screen layout safeguards ---------- */
+@media (min-width: 651px) and (max-width: 900px) {
+    .nav-container { gap: 12px; }
+    .brand { gap: 0.4rem; font-size: 21px; letter-spacing: 0.04em; }
+    .brand-logo { width: 42px; height: 42px; flex-basis: 42px; }
+    .nav-links, nav ul { gap: 10px; }
+    .nav-links a, nav ul a { font-size: 9px; letter-spacing: 0.08em; }
+}
+@media (max-width: 650px) {
+    body { overflow-wrap: break-word; }
+    .container, .nav-container { width: min(92%, 100%); }
+    .brand { min-width: 0; font-size: clamp(17px, 4.6vw, 22px); letter-spacing: 0.035em; }
+    .brand-wordmark { white-space: nowrap; }
+    .menu-toggle { min-width: 44px; min-height: 44px; }
+    .contact-form, .contact-grid, .form-group,
+    .catalog-tools, .catalog-search, .catalog-sort { min-width: 0; }
+    .contact-form input, .contact-form select, .contact-form textarea,
+    .catalog-search input, .catalog-sort select { max-width: 100%; }
+    .btn { max-width: 100%; white-space: normal; text-align: center; }
+    .lb-image { max-width: 100%; }
+}
