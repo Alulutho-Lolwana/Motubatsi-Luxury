@@ -1861,3 +1861,22 @@ body.lightbox-open {
     .brand-tabs-section .brand-tab,
     .brand-tabs-section .brand-tab-panel { animation: none !important; transition: none !important; }
 }
+
+/* Accessible skip navigation and shared footer layout */
+.skip-link{position:absolute;z-index:100000;top:10px;left:10px;padding:12px 18px;transform:translateY(-160%);border:1px solid var(--gold);background:#171512;color:var(--cream);font-weight:600;text-decoration:none;transition:transform 180ms ease}
+.skip-link:focus{transform:translateY(0);outline:2px solid var(--gold-light);outline-offset:3px}
+#main-content:focus{outline:none}
+#top{scroll-behavior:smooth}
+.site-footer .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(28px,5vw,72px);padding:52px 0 38px}
+.footer-brand-name{display:inline-block;margin-bottom:14px;color:var(--cream);font-family:Georgia,"Times New Roman",serif;font-size:25px;text-decoration:none;letter-spacing:.02em}
+.footer-brand-name span{color:var(--gold)}
+.site-footer .footer-brand p,.footer-note{max-width:330px;color:var(--muted);line-height:1.8}
+.site-footer .footer-title{margin:0 0 18px;color:var(--cream);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.site-footer .footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:11px}
+.site-footer .footer-links a,.back-to-top{color:var(--muted);font-size:13px;text-decoration:none;transition:color 180ms ease,transform 180ms ease}
+.site-footer .footer-links a:hover,.site-footer .footer-links a:focus-visible,.back-to-top:hover,.back-to-top:focus-visible{color:var(--gold-light);transform:translateX(3px)}
+.site-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+.site-footer .footer-bottom p{margin:0}
+@media(max-width:700px){.site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer .footer-brand{grid-column:1/-1}}
+@media(max-width:420px){.site-footer .footer-grid{grid-template-columns:1fr}.site-footer .footer-brand{grid-column:auto}.site-footer .footer-bottom{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.skip-link,.site-footer .footer-links a,.back-to-top{transition:none!important}#top{scroll-behavior:auto}}
