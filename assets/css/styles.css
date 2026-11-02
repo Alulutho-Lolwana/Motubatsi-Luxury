@@ -1348,3 +1348,98 @@ footer p,
         right: 12px;
     }
 }
+
+
+/* ---------- Interactive product catalogue ---------- */
+.catalog-tools-section {
+    padding-top: 20px;
+}
+.catalog-tools {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+    gap: 18px;
+    align-items: end;
+}
+.catalog-search,
+.catalog-sort {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.catalog-search label,
+.catalog-sort label {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.catalog-search input,
+.catalog-sort select {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--charcoal);
+    color: var(--cream);
+}
+.catalog-search input::placeholder {
+    color: var(--muted);
+}
+.catalog-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 24px 0 18px;
+}
+.catalog-filter {
+    padding: 9px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.catalog-filter:hover,
+.catalog-filter.active {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: var(--black);
+}
+.catalog-results {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+}
+.catalog-product-category {
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+.catalog-empty {
+    padding: 45px 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+}
+.catalog-empty[hidden] {
+    display: none;
+}
+@media (max-width: 650px) {
+    .catalog-tools {
+        grid-template-columns: 1fr;
+    }
+    .catalog-results {
+        text-align: left;
+    }
+}
