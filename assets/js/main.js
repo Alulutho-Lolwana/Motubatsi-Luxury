@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Product image lightbox, used by the Products and Catalog pages.
-    var productImages = document.querySelectorAll('.card-image img');
-    if (!productImages.length) return;
+    // Image lightbox for all content images across every page.
+    // Map tiles and Leaflet controls are excluded because they are interface elements.
+    var pageImages = Array.prototype.filter.call(document.querySelectorAll('img'), function (image) {
+        return !image.closest('.leaflet-container') && !image.closest('.image-lightbox');
+    });
+    if (!pageImages.length) return;
 
     var lightbox = document.createElement('div');
     lightbox.className = 'image-lightbox';
@@ -64,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         closeButton.focus();
     }
 
-    productImages.forEach(function (image) {
+    pageImages.forEach(function (image) {
         image.setAttribute('tabindex', '0');
         image.setAttribute('role', 'button');
         image.setAttribute('aria-label', 'View larger image: ' + (image.alt || 'product image'));

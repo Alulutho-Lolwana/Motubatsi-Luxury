@@ -1264,7 +1264,7 @@ footer p,
 
 
 /* ---------- Product image lightbox ---------- */
-.card-image img {
+.lightbox-trigger {
     cursor: zoom-in;
 }
 
