@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Mokorotlo I', category: 'headwear', image: '../assets/images/Mokorotlo 1.jpeg', description: 'Headwear inspired by the mokorotlo, an enduring symbol of Basotho identity.' },
             { name: 'Mokorotlo II', category: 'headwear', image: '../assets/images/Mokorotlo 2.jpeg', description: 'A distinctive mokorotlo-inspired piece celebrating Basotho cultural heritage.' },
             { name: 'Mokorotlo III', category: 'headwear', image: '../assets/images/Mokorotlo 3.jpeg', description: 'A heritage headwear design with a timeless cultural influence.' },
-            { name: 'Mokorotlo IV', category: 'headwear', image: '../assets/images/Mokorotlo 4.jpeg', description: 'A statement headwear piece inspired by the iconic Basotho hat.' }
+            { name: 'Mokorotlo IV', category: 'headwear', image: '../assets/images/Mokorotlo 4.jpeg', description: 'A statement headwear piece inspired by the iconic Basotho hat.' },
+            { name: 'Mokorotlo Hat Pair', category: 'headwear', image: '../assets/images/Mokorotlo.jpeg', description: 'A pair of hand-crafted Basotho mokorotlo hats, showcasing traditional woven form and colourful detailing.' },
+            { name: 'Heritage Blanket & Mokorotlo Set', category: 'blankets', image: '../assets/images/background.image.jpeg', description: 'A Basotho-inspired heritage ensemble featuring a traditional blanket and mokorotlo, styled together in a scenic setting.' }
         ];
         var searchInput = document.getElementById('catalog-search');
         var sortSelect = document.getElementById('catalog-sort');
