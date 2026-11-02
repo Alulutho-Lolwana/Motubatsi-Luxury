@@ -103,85 +103,193 @@ document.addEventListener('DOMContentLoaded', function () {
         renderProducts();
     }
 
-    // Image lightbox for all content images across every page.
-    // Map tiles and Leaflet controls are excluded because they are interface elements.
-    var pageImages = Array.prototype.filter.call(document.querySelectorAll('img'), function (image) {
-        return !image.closest('.leaflet-container') && !image.closest('.image-lightbox');
-    });
-    if (!pageImages.length) return;
-
-    var lightbox = document.createElement('div');
-    lightbox.className = 'image-lightbox';
-    lightbox.setAttribute('role', 'dialog');
-    lightbox.setAttribute('aria-modal', 'true');
-    lightbox.setAttribute('aria-label', 'Product image preview');
-    lightbox.hidden = true;
-
-    var closeButton = document.createElement('button');
-    closeButton.className = 'image-lightbox-close';
-    closeButton.type = 'button';
-    closeButton.setAttribute('aria-label', 'Close image preview');
-    closeButton.innerHTML = '&times;';
-
-    var content = document.createElement('div');
-    content.className = 'image-lightbox-content';
-
-    var enlargedImage = document.createElement('img');
-    enlargedImage.className = 'image-lightbox-image';
-    enlargedImage.alt = '';
-
-    var caption = document.createElement('p');
-    caption.className = 'image-lightbox-caption';
-
-    content.appendChild(enlargedImage);
-    content.appendChild(caption);
-    lightbox.appendChild(closeButton);
-    lightbox.appendChild(content);
-    document.body.appendChild(lightbox);
-
-    var previouslyFocused = null;
-
-    function closeLightbox() {
-        if (lightbox.hidden) return;
-        lightbox.hidden = true;
-        document.body.style.overflow = '';
-        enlargedImage.removeAttribute('src');
-        if (previouslyFocused) previouslyFocused.focus();
+    // Accessible image gallery lightbox, following the Campus Cart interaction pattern.
+    // Only meaningful content images inside <main> are viewable. Linked images, controls,
+    // maps and explicitly excluded images are left untouched.
+    function isViewableImage(image) {
+        if (!image || !image.closest('main')) return false;
+        if (image.closest('a, button, .lightbox, .modal, .leaflet-container, [data-no-lightbox]')) return false;
+        return image.hasAttribute('alt') && image.alt.trim() !== '';
     }
 
-    function openLightbox(image) {
-        previouslyFocused = image;
-        enlargedImage.src = image.currentSrc || image.src;
-        enlargedImage.alt = image.alt || 'Enlarged product image';
-        caption.textContent = image.alt || '';
-        lightbox.hidden = false;
-        document.body.style.overflow = 'hidden';
-        closeButton.focus();
-    }
+    function initLightbox() {
+        var main = document.querySelector('main');
+        if (!main || !main.querySelector('img')) return;
 
-    pageImages.forEach(function (image) {
-        image.classList.add('lightbox-trigger');
-        image.setAttribute('tabindex', '0');
-        image.setAttribute('role', 'button');
-        image.setAttribute('aria-label', 'View larger image: ' + (image.alt || 'product image'));
-        image.addEventListener('click', function () {
-            openLightbox(image);
-        });
-        image.addEventListener('keydown', function (event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
+        var overlay = document.createElement('div');
+        overlay.className = 'lightbox';
+        overlay.hidden = true;
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-label', 'Image viewer');
+
+        function makeButton(className, label, text) {
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'lb-btn ' + className;
+            button.setAttribute('aria-label', label);
+            button.textContent = text;
+            return button;
+        }
+
+        var closeButton = makeButton('lb-close', 'Close image viewer', '×');
+        var previousButton = makeButton('lb-prev', 'Previous image', '‹');
+        var nextButton = makeButton('lb-next', 'Next image', '›');
+        var figure = document.createElement('figure');
+        figure.className = 'lb-figure';
+        var enlargedImage = document.createElement('img');
+        enlargedImage.className = 'lb-image';
+        var caption = document.createElement('figcaption');
+        caption.className = 'lb-caption';
+        var counter = document.createElement('p');
+        counter.className = 'lb-count';
+
+        figure.appendChild(enlargedImage);
+        figure.appendChild(caption);
+        figure.appendChild(counter);
+        overlay.appendChild(closeButton);
+        overlay.appendChild(previousButton);
+        overlay.appendChild(figure);
+        overlay.appendChild(nextButton);
+        document.body.appendChild(overlay);
+
+        var currentImages = [];
+        var currentIndex = 0;
+        var opener = null;
+
+        function groupFor(image) {
+            var group = image.closest('.gallery, .card-grid, .grid, section') || main;
+            return Array.prototype.filter.call(group.querySelectorAll('img'), function (candidate) {
+                return isViewableImage(candidate) && !candidate.closest('[hidden]');
+            });
+        }
+
+        function captionFor(image) {
+            var figureElement = image.closest('figure');
+            var figureCaption = figureElement ? figureElement.querySelector('figcaption') : null;
+            if (figureCaption) return figureCaption.textContent.trim();
+            var card = image.closest('.card');
+            var heading = card ? card.querySelector('h3') : null;
+            return heading ? heading.textContent.trim() : image.alt;
+        }
+
+        function showImage(index) {
+            if (!currentImages.length) return;
+            currentIndex = (index + currentImages.length) % currentImages.length;
+            var image = currentImages[currentIndex];
+            enlargedImage.src = image.currentSrc || image.src;
+            enlargedImage.alt = image.alt;
+            caption.textContent = captionFor(image);
+            counter.textContent = 'Image ' + (currentIndex + 1) + ' of ' + currentImages.length;
+            previousButton.hidden = nextButton.hidden = currentImages.length < 2;
+        }
+
+        function openLightbox(image) {
+            opener = image;
+            currentImages = groupFor(image);
+            showImage(currentImages.indexOf(image));
+            overlay.hidden = false;
+            document.body.classList.add('lightbox-open');
+            closeButton.focus();
+        }
+
+        function closeLightbox() {
+            if (overlay.hidden) return;
+            overlay.hidden = true;
+            document.body.classList.remove('lightbox-open');
+            enlargedImage.removeAttribute('src');
+            if (opener) opener.focus();
+        }
+
+        function prepareImage(image) {
+            if (!isViewableImage(image) || image.getAttribute('role') === 'button') return;
+            image.classList.add('lightbox-trigger');
+            image.tabIndex = 0;
+            image.setAttribute('role', 'button');
+            image.setAttribute('aria-label', 'View larger image: ' + image.alt);
+        }
+
+        Array.prototype.forEach.call(main.querySelectorAll('img'), prepareImage);
+
+        // Observe newly rendered catalogue cards so their images also join the lightbox.
+        if (typeof MutationObserver !== 'undefined') {
+            new MutationObserver(function (changes) {
+                changes.forEach(function (change) {
+                    Array.prototype.forEach.call(change.addedNodes, function (node) {
+                        if (node.nodeType !== 1) return;
+                        if (node.tagName === 'IMG') prepareImage(node);
+                        if (node.querySelectorAll) {
+                            Array.prototype.forEach.call(node.querySelectorAll('img'), prepareImage);
+                        }
+                    });
+                });
+            }).observe(main, { childList: true, subtree: true });
+        }
+
+        // Delegated listeners handle both initial and dynamically generated product images.
+        document.addEventListener('click', function (event) {
+            var image = event.target.closest ? event.target.closest('img') : null;
+            if (image && image.getAttribute('role') === 'button' && isViewableImage(image)) {
                 openLightbox(image);
             }
         });
-    });
 
-    closeButton.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function (event) {
-        if (event.target === lightbox || event.target === enlargedImage) {
-            closeLightbox();
+        document.addEventListener('keydown', function (event) {
+            var target = event.target;
+            if (target && target.tagName === 'IMG' && target.getAttribute('role') === 'button' &&
+                (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                openLightbox(target);
+            }
+        });
+
+        function trapLightboxFocus(event) {
+            if (event.key !== 'Tab') return;
+            var focusable = Array.prototype.slice.call(
+                overlay.querySelectorAll('button:not([hidden]), [href], [tabindex]:not([tabindex="-1"])')
+            ).filter(function (element) {
+                return !element.disabled && element.offsetParent !== null;
+            });
+            if (!focusable.length) {
+                event.preventDefault();
+                closeButton.focus();
+                return;
+            }
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
-    });
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') closeLightbox();
-    });
+
+        closeButton.addEventListener('click', closeLightbox);
+        previousButton.addEventListener('click', function () { showImage(currentIndex - 1); });
+        nextButton.addEventListener('click', function () { showImage(currentIndex + 1); });
+        overlay.addEventListener('click', function (event) {
+            if (event.target === overlay) closeLightbox();
+        });
+        overlay.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') closeLightbox();
+            if (event.key === 'ArrowLeft' && currentImages.length > 1) showImage(currentIndex - 1);
+            if (event.key === 'ArrowRight' && currentImages.length > 1) showImage(currentIndex + 1);
+            trapLightboxFocus(event);
+        });
+
+        var touchStartX = null;
+        overlay.addEventListener('touchstart', function (event) {
+            touchStartX = event.changedTouches[0].clientX;
+        }, { passive: true });
+        overlay.addEventListener('touchend', function (event) {
+            if (touchStartX === null || currentImages.length < 2) return;
+            var distance = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(distance) > 50) showImage(distance > 0 ? currentIndex - 1 : currentIndex + 1);
+            touchStartX = null;
+        }, { passive: true });
+    }
+
+    initLightbox();
 });
