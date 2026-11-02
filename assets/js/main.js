@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     pageImages.forEach(function (image) {
+        image.classList.add('lightbox-trigger');
         image.setAttribute('tabindex', '0');
         image.setAttribute('role', 'button');
         image.setAttribute('aria-label', 'View larger image: ' + (image.alt || 'product image'));
