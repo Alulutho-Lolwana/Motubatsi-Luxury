@@ -77,6 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
         var emptyMessage = document.getElementById('catalog-empty');
         var filterButtons = Array.prototype.slice.call(document.querySelectorAll('.catalog-filter'));
         var activeCategory = 'all';
+        var initialProductLimit = 8;
+        var showAllProducts = false;
+        var seeMoreButton = makeCatalogElement('button', 'btn catalog-see-toggle', 'See more products');
+        seeMoreButton.type = 'button';
+        seeMoreButton.setAttribute('aria-controls', 'catalog-products');
+        seeMoreButton.setAttribute('aria-expanded', 'false');
+        productGrid.parentNode.insertBefore(seeMoreButton, productGrid.nextSibling);
+
+        seeMoreButton.addEventListener('click', function () {
+            showAllProducts = !showAllProducts;
+            renderProducts();
+        });
 
         function makeCatalogElement(tag, className, text) {
             var element = document.createElement(tag);
@@ -107,7 +119,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             productGrid.textContent = '';
-            visibleProducts.forEach(function (product) {
+            var productsToRender = showAllProducts
+                ? visibleProducts
+                : visibleProducts.slice(0, initialProductLimit);
+            productsToRender.forEach(function (product) {
                 var card = makeCatalogElement('article', 'card catalog-product-card');
                 var imageWrap = makeCatalogElement('div', 'card-image');
                 var image = makeCatalogElement('img');
@@ -131,7 +146,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 productGrid.appendChild(card);
             });
 
-            resultCount.textContent = 'Showing ' + visibleProducts.length + ' of ' + products.length + ' pieces';
+            resultCount.textContent = 'Showing ' + productsToRender.length + ' of ' + visibleProducts.length + ' matching pieces';
+            seeMoreButton.hidden = visibleProducts.length <= initialProductLimit;
+            seeMoreButton.textContent = showAllProducts ? 'See less' : 'See more products';
+            seeMoreButton.setAttribute('aria-expanded', String(showAllProducts));
             emptyMessage.hidden = visibleProducts.length !== 0;
         }
 
@@ -143,11 +161,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     item.classList.toggle('active', selected);
                     item.setAttribute('aria-pressed', String(selected));
                 });
+                showAllProducts = false;
                 renderProducts();
             });
         });
-        searchInput.addEventListener('input', renderProducts);
-        sortSelect.addEventListener('change', renderProducts);
+        searchInput.addEventListener('input', function () {
+            showAllProducts = false;
+            renderProducts();
+        });
+        sortSelect.addEventListener('change', function () {
+            showAllProducts = false;
+            renderProducts();
+        });
         renderProducts();
     }
 

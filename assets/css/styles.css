@@ -1930,3 +1930,19 @@ body.lightbox-open {
     .nav-links a, nav ul a { min-height: 44px; }
     .catalog-filter { min-height: 44px; }
 }
+
+
+/* ---------- See more / see less product controls ---------- */
+.catalog-see-toggle {
+    display: block;
+    min-width: 190px;
+    margin: 30px auto 0;
+    cursor: pointer;
+}
+.catalog-see-toggle[hidden] {
+    display: none !important;
+}
+.catalog-see-toggle:focus-visible {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 4px;
+}
