@@ -1570,3 +1570,121 @@ body.lightbox-open {
     }
     .reveal-on-scroll { opacity: 1 !important; }
 }
+
+
+/* ---------- Luxury interactive tabs ---------- */
+.brand-tabs {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(200, 169, 107, 0.08), rgba(255, 255, 255, 0.018));
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+}
+.brand-tab-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    background: rgba(0, 0, 0, 0.2);
+}
+.brand-tab {
+    position: relative;
+    flex: 1 1 150px;
+    min-height: 58px;
+    padding: 14px 22px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 260ms ease, background 260ms ease, border-color 260ms ease;
+}
+.brand-tab:hover,
+.brand-tab:focus-visible,
+.brand-tab.is-active {
+    color: var(--gold-light);
+    background: rgba(200, 169, 107, 0.07);
+}
+.brand-tab.is-active { border-bottom-color: var(--gold); }
+.brand-tab:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: -4px;
+}
+.brand-tab-panels { min-height: 245px; }
+.brand-tab-panel {
+    padding: clamp(28px, 5vw, 54px);
+    animation: tabPanelReveal 420ms cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+.brand-tab-panel[hidden] { display: none; }
+.brand-tab-panel .tab-index {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+.brand-tab-panel h3 {
+    margin-bottom: 14px;
+    color: var(--cream);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+.brand-tab-panel p {
+    max-width: 680px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+@keyframes tabPanelReveal {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Subtle cursor-follow accent (fine pointers only) ---------- */
+.cursor-follow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99980;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(223, 197, 143, 0.7);
+    border-radius: 50%;
+    background: rgba(200, 169, 107, 0.055);
+    box-shadow: 0 0 22px rgba(200, 169, 107, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transition: width 220ms ease, height 220ms ease, opacity 220ms ease, border-color 220ms ease, background 220ms ease;
+    will-change: transform;
+}
+.cursor-follow.is-active { opacity: 1; }
+.cursor-follow.is-hovering {
+    width: 48px;
+    height: 48px;
+    border-color: var(--gold-light);
+    background: rgba(200, 169, 107, 0.12);
+}
+.cursor-follow.is-pressed {
+    width: 25px;
+    height: 25px;
+    background: rgba(200, 169, 107, 0.2);
+}
+@media (hover: none), (pointer: coarse) {
+    .cursor-follow { display: none !important; }
+}
+@media (max-width: 650px) {
+    .brand-tab { flex-basis: 100%; min-height: 48px; }
+    .brand-tab-panels { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .brand-tab,
+    .brand-tab-panel,
+    .cursor-follow {
+        animation: none !important;
+        transition: none !important;
+    }
+    .cursor-follow { display: none !important; }
+}

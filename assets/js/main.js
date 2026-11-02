@@ -163,6 +163,88 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Accessible interactive tabs for the About page.
+    document.querySelectorAll('[data-tabs]').forEach(function (tabSet) {
+        var tabs = Array.prototype.slice.call(tabSet.querySelectorAll('[role="tab"]'));
+        var panels = Array.prototype.slice.call(tabSet.querySelectorAll('[role="tabpanel"]'));
+
+        function activateTab(tab, moveFocus) {
+            tabs.forEach(function (item) {
+                var selected = item === tab;
+                item.classList.toggle('is-active', selected);
+                item.setAttribute('aria-selected', String(selected));
+                item.tabIndex = selected ? 0 : -1;
+            });
+            panels.forEach(function (panel) {
+                var selected = panel.id === tab.getAttribute('aria-controls');
+                panel.hidden = !selected;
+                panel.classList.toggle('is-active', selected);
+            });
+            if (moveFocus) tab.focus();
+        }
+
+        tabs.forEach(function (tab, index) {
+            tab.addEventListener('click', function () { activateTab(tab, false); });
+            tab.addEventListener('keydown', function (event) {
+                var nextIndex = index;
+                if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+                else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+                else if (event.key === 'Home') nextIndex = 0;
+                else if (event.key === 'End') nextIndex = tabs.length - 1;
+                else return;
+                event.preventDefault();
+                activateTab(tabs[nextIndex], true);
+            });
+        });
+    });
+
+    // A restrained gold cursor-follow accent for mouse/trackpad users only.
+    // It is omitted on touch devices and when reduced motion is requested.
+    var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (finePointer && !reduceMotion) {
+        var cursorGlow = document.createElement('span');
+        cursorGlow.className = 'cursor-follow';
+        cursorGlow.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(cursorGlow);
+        var pointerX = -100;
+        var pointerY = -100;
+        var cursorX = pointerX;
+        var cursorY = pointerY;
+        var cursorFrame = null;
+
+        document.addEventListener('pointermove', function (event) {
+            pointerX = event.clientX;
+            pointerY = event.clientY;
+            cursorGlow.classList.add('is-active');
+            if (cursorFrame === null) {
+                cursorFrame = window.requestAnimationFrame(function updateCursor() {
+                    cursorX += (pointerX - cursorX) * 0.18;
+                    cursorY += (pointerY - cursorY) * 0.18;
+                    cursorGlow.style.transform = 'translate3d(' + cursorX + 'px, ' + cursorY + 'px, 0) translate(-50%, -50%)';
+                    if (Math.abs(pointerX - cursorX) > 0.2 || Math.abs(pointerY - cursorY) > 0.2) {
+                        cursorFrame = window.requestAnimationFrame(updateCursor);
+                    } else {
+                        cursorFrame = null;
+                    }
+                });
+            }
+        }, { passive: true });
+
+        document.addEventListener('pointerdown', function () { cursorGlow.classList.add('is-pressed'); });
+        document.addEventListener('pointerup', function () { cursorGlow.classList.remove('is-pressed'); });
+        document.addEventListener('pointerleave', function () { cursorGlow.classList.remove('is-active'); });
+        document.addEventListener('pointerover', function (event) {
+            if (event.target.closest('a, button, summary, input, select, textarea, [role="button"], [role="tab"]')) {
+                cursorGlow.classList.add('is-hovering');
+            }
+        });
+        document.addEventListener('pointerout', function (event) {
+            if (event.target.closest('a, button, summary, input, select, textarea, [role="button"], [role="tab"]')) {
+                cursorGlow.classList.remove('is-hovering');
+            }
+        });
+    }
+
     // Accessible image gallery lightbox, following the Campus Cart interaction pattern.
     // Only meaningful content images inside <main> are viewable. Linked images, controls,
     // maps and explicitly excluded images are left untouched.
