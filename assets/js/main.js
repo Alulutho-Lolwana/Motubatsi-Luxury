@@ -15,14 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var productGrid = document.getElementById('catalog-products');
     if (productGrid) {
         var products = [
-            { name: 'Heritage Dress', category: 'dresses', image: '../assets/images/mokorotlo.jpeg', description: 'A contemporary statement piece inspired by Basotho heritage, designed for elegant occasions.' },
-            { name: 'Mokorotlo Evening Gown', category: 'dresses', image: '../assets/images/founder.jpeg', description: 'A floor-length gown with subtle mokorotlo-inspired silhouette lines, for formal events.' },
-            { name: 'Heritage Wrap Dress', category: 'dresses', image: '../assets/images/ceo.jpeg', description: 'A versatile wrap-style dress finished with hand-stitched detailing.' },
-            { name: 'Luxury Heritage Jacket', category: 'jackets', image: '../assets/images/founder-ceo.jpeg', description: 'A sophisticated jacket combining modern tailoring with subtle Basotho-inspired elements.' },
-            { name: 'Structured Blazer', category: 'jackets', image: '../assets/images/mokorotlo.jpeg', description: 'A tailored blazer with a Basotho blanket-inspired lining, made for statement dressing.' },
-            { name: 'Basotho Blanket Collection', category: 'blankets', image: '../assets/images/ceo.jpeg', description: 'Fashion pieces inspired by the iconic Basotho blanket and its connection to cultural identity.' },
-            { name: 'Luxury Shawl', category: 'blankets', image: '../assets/images/founder.jpeg', description: 'A lightweight shawl reworking traditional Basotho blanket patterns for everyday luxury.' },
-            { name: 'Sotho Hat Collection', category: 'headwear', image: '../assets/images/web-development.jpg', description: 'Contemporary pieces inspired by the mokorotlo, a distinctive symbol of Basotho culture.' }
+            { name: 'Heritage Dress I', category: 'dresses', image: '../assets/images/Dress 1.jpeg', description: 'A refined heritage-inspired dress for elegant occasions, with a contemporary silhouette.' },
+            { name: 'Heritage Dress II', category: 'dresses', image: '../assets/images/Dress 2.jpeg', description: 'A modern statement dress celebrating Basotho identity and confident style.' },
+            { name: 'Heritage Dress III', category: 'dresses', image: '../assets/images/Dress 3.jpeg', description: 'A versatile occasion piece bringing traditional inspiration into a modern wardrobe.' },
+            { name: 'Heritage Dress IV', category: 'dresses', image: '../assets/images/Dress 4.jpeg', description: 'A distinctive dress from the Motubatsi heritage-inspired collection.' },
+            { name: 'Basotho Jacket I', category: 'jackets', image: '../assets/images/Basotho jacket 1.jpeg', description: 'A tailored outerwear piece inspired by Basotho dress and contemporary luxury.' },
+            { name: 'Basotho Jacket II', category: 'jackets', image: '../assets/images/Basotho jacket 2.jpeg', description: 'A statement jacket designed to bring cultural influence to modern styling.' },
+            { name: 'Basotho Jacket III', category: 'jackets', image: '../assets/images/Basotho jacket 3.jpeg', description: 'A distinctive jacket from the Motubatsi Basotho-inspired outerwear range.' },
+            { name: 'Basotho Jacket IV', category: 'jackets', image: '../assets/images/Basotho jacket 4.jpeg', description: 'A contemporary jacket celebrating heritage through thoughtful design.' },
+            { name: 'Khobo Collection I', category: 'blankets', image: '../assets/images/Khobo 1.jpeg', description: 'A heritage-inspired khobo piece reflecting the warmth and character of Basotho textile traditions.' },
+            { name: 'Khobo Collection II', category: 'blankets', image: '../assets/images/Khobo 2.jpeg', description: 'A distinctive textile piece inspired by traditional Basotho styling.' },
+            { name: 'Khobo Collection III', category: 'blankets', image: '../assets/images/Khobo 3.jpeg', description: 'A versatile heritage layer designed to complement contemporary outfits.' },
+            { name: 'Khobo Collection IV', category: 'blankets', image: '../assets/images/Khobo 4.jpeg', description: 'A statement piece celebrating the texture and identity of Basotho-inspired design.' },
+            { name: 'Khobo Collection V', category: 'blankets', image: '../assets/images/Khobo 5.jpeg', description: 'A refined addition to the Motubatsi collection of heritage-inspired wraps and textiles.' },
+            { name: 'Mokorotlo I', category: 'headwear', image: '../assets/images/Mokorotlo 1.jpeg', description: 'Headwear inspired by the mokorotlo, an enduring symbol of Basotho identity.' },
+            { name: 'Mokorotlo II', category: 'headwear', image: '../assets/images/Mokorotlo 2.jpeg', description: 'A distinctive mokorotlo-inspired piece celebrating Basotho cultural heritage.' },
+            { name: 'Mokorotlo III', category: 'headwear', image: '../assets/images/Mokorotlo 3.jpeg', description: 'A heritage headwear design with a timeless cultural influence.' },
+            { name: 'Mokorotlo IV', category: 'headwear', image: '../assets/images/Mokorotlo 4.jpeg', description: 'A statement headwear piece inspired by the iconic Basotho hat.' }
         ];
         var searchInput = document.getElementById('catalog-search');
         var sortSelect = document.getElementById('catalog-sort');
