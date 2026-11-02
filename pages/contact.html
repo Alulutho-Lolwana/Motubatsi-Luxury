@@ -23,10 +23,11 @@
 </head>
 <!-- Closes the document head. -->
 
-<body>
+<body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Opens the visible page content. -->
 
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <!-- Creates the main website header. -->
 
         <div class="navbar">
@@ -39,10 +40,10 @@
                 <!-- Creates the clickable website brand/logo and links it back to the home page. -->
                 <!-- The span allows "Luxury" to be styled separately from "Motubatsi". -->
 
-                <nav>
+                <nav aria-label="Main navigation">
                     <!-- Defines the main navigation area. -->
 
-                    <ul class="nav-links">
+                    <ul class="nav-links" id="primary-navigation">
                         <!-- Creates an unordered list containing the navigation links. -->
 
                         <li><a href="../index.html">Home</a></li>
@@ -71,7 +72,7 @@
                 </nav>
                 <!-- Closes the navigation area. -->
 
-                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">&#9776;</button>
                 <!-- Creates the mobile navigation button. -->
                 <!-- aria-label provides an accessible description for screen readers. -->
                 <!-- &#9776; displays the hamburger menu symbol. -->
@@ -83,7 +84,7 @@
     </header>
     <!-- Closes the website header. -->
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- Opens the main content area of the Contact Us page. -->
 
         <section>
@@ -248,19 +249,11 @@
     </main>
     <!-- Closes the main page content. -->
 
-    <footer class="site-footer">
-        <!-- Creates the website footer. -->
-
-        <div class="container footer-bottom">
-            <!-- Creates the footer's content container. -->
-
-            &copy; 2026 House of Motubatsi. All rights reserved.
-            <!-- Displays the copyright notice. -->
-            <!-- &copy; creates the copyright symbol. -->
-
-        </div>
-        <!-- Closes the footer content container. -->
-    </footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><a class="footer-brand-name" href="../index.html">Motubatsi <span>Luxury</span></a><p>Basotho Heritage. Modern Luxury.</p><p class="footer-note">Celebrating identity through heritage-inspired contemporary fashion.</p></div>
+<div class="footer-links"><h2 class="footer-title">Quick Links</h2><a href="../index.html">Home</a><a href="../pages/about.html">About Us</a><a href="../pages/our-story.html">Our Story</a><a href="../pages/product.html">Products</a><a href="../pages/catalog.html">Catalog</a></div>
+<div class="footer-links"><h2 class="footer-title">Help &amp; Connect</h2><a href="../pages/enquiry.html">Product Enquiry</a><a href="../pages/contact.html">Contact Us</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div>
+</div><div class="footer-bottom"><p>&copy; 2026 House of Motubatsi. All rights reserved.</p><a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
     <!-- Closes the website footer. -->
 
 <script src="../assets/js/map.js"></script>

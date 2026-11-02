@@ -24,10 +24,11 @@
 </head>
 <!-- Closes the head section. -->
 
-<body>
+<body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Opens the visible content of the webpage. -->
 
-    <header class="site-header">
+    <header class="site-header" id="site-header">
         <!-- Creates the main website header. -->
 
         <div class="navbar">
@@ -41,10 +42,10 @@
                 <!-- The href links the brand back to the home page. -->
                 <!-- The span allows the word "Luxury" to receive separate styling. -->
 
-                <nav>
+                <nav aria-label="Main navigation">
                     <!-- Defines the primary navigation area of the website. -->
 
-                    <ul class="nav-links">
+                    <ul class="nav-links" id="primary-navigation">
                         <!-- Creates an unordered list containing the website navigation links. -->
 
                         <li><a href="./index.html" class="active">Home</a></li>
@@ -75,7 +76,7 @@
                 </nav>
                 <!-- Closes the navigation area. -->
 
-                <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">&#9776;</button>
                 <!-- Creates the mobile navigation toggle button. -->
                 <!-- aria-label gives the button an accessible description for screen readers. -->
                 <!-- &#9776; displays the hamburger menu symbol. -->
@@ -89,7 +90,7 @@
     </header>
     <!-- Closes the website header. -->
 
-    <main>
+    <main id="main-content" tabindex="-1">
         <!-- Opens the main content area of the home page. -->
 
         <!-- Hero section: the main introductory banner at the top of the page. -->
@@ -324,91 +325,11 @@
     </main>
     <!-- Closes the main page content. -->
 
-    <footer class="site-footer">
-        <!-- Creates the website footer. -->
-
-        <div class="container">
-            <!-- Creates the main footer container. -->
-
-            <div class="footer-grid">
-                <!-- Creates a responsive grid for the footer's three content areas. -->
-
-                <div>
-                    <!-- Creates the first footer column containing the brand information. -->
-
-                    <h3 class="footer-title">Motubatsi <span class="text-gold">Luxury</span></h3>
-                    <!-- Displays the brand name in the footer. -->
-                    <!-- The text-gold class gives "Luxury" the site's gold styling. -->
-
-                    <p>Basotho Heritage. Modern Luxury.</p>
-                    <!-- Displays the brand tagline. -->
-
-                </div>
-                <!-- Closes the brand information column. -->
-
-                <div class="footer-links">
-                    <!-- Creates the second footer column containing exploration links. -->
-
-                    <h3 class="footer-title" style="font-size: 16px;">Explore</h3>
-                    <!-- Displays the Explore heading. -->
-                    <!-- The inline style sets the heading font size to 16 pixels. -->
-
-                    <a href="./pages/about.html">About Us</a>
-                    <!-- Footer link to the About Us page. -->
-
-                    <a href="./pages/our-story.html">Our Story</a>
-                    <!-- Footer link to the Our Story page. -->
-
-                    <a href="./pages/product.html">Products</a>
-                    <!-- Footer link to the Products page. -->
-
-                    <a href="./pages/catalog.html">Catalog</a>
-                    <!-- Footer link to the Catalog page. -->
-
-                    <a href="./pages/contact.html">Contact</a>
-                    <!-- Footer link to the Contact page. -->
-
-                </div>
-                <!-- Closes the Explore links column. -->
-
-                <div class="footer-links">
-                    <!-- Creates the third footer column containing contact and social information. -->
-
-                    <h3 class="footer-title" style="font-size: 16px;">Contact</h3>
-                    <!-- Displays the Contact heading. -->
-                    <!-- The inline style sets the heading font size to 16 pixels. -->
-
-                    <a href="mailto:info@houseofmotubatsi.co.za">info@houseofmotubatsi.co.za</a>
-                    <!-- Creates an email link that opens the visitor's default email application. -->
-
-                    <a href="https://instagram.com/houseofmotubatsi" target="_blank" rel="noopener">@houseofmotubatsi</a>
-                    <!-- Creates a link to the brand's Instagram profile. -->
-                    <!-- target="_blank" opens the link in a new browser tab or window. -->
-                    <!-- rel="noopener" improves security when opening an external page in a new tab. -->
-
-                    <span>South Africa</span>
-                    <!-- Displays the country associated with the brand. -->
-
-                </div>
-                <!-- Closes the Contact column. -->
-
-            </div>
-            <!-- Closes the footer grid. -->
-
-            <div class="footer-bottom">
-                <!-- Creates the bottom area of the footer. -->
-
-                &copy; 2026 House of Motubatsi. All Rights Reserved.
-                <!-- Displays the copyright notice. -->
-                <!-- &copy; creates the copyright symbol. -->
-
-            </div>
-            <!-- Closes the footer-bottom area. -->
-
-        </div>
-        <!-- Closes the main footer container. -->
-
-    </footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid">
+<div class="footer-brand"><a class="footer-brand-name" href="./index.html">Motubatsi <span>Luxury</span></a><p>Basotho Heritage. Modern Luxury.</p><p class="footer-note">Celebrating identity through heritage-inspired contemporary fashion.</p></div>
+<div class="footer-links"><h2 class="footer-title">Quick Links</h2><a href="./index.html">Home</a><a href="./pages/about.html">About Us</a><a href="./pages/our-story.html">Our Story</a><a href="./pages/product.html">Products</a><a href="./pages/catalog.html">Catalog</a></div>
+<div class="footer-links"><h2 class="footer-title">Help &amp; Connect</h2><a href="./pages/enquiry.html">Product Enquiry</a><a href="./pages/contact.html">Contact Us</a><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div>
+</div><div class="footer-bottom"><p>&copy; 2026 House of Motubatsi. All rights reserved.</p><a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div></div></footer>
     <!-- Closes the website footer. -->
 
     <script src="./assets/js/main.js"></script>
