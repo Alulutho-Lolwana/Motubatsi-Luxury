@@ -1912,3 +1912,21 @@ body.lightbox-open {
     .btn { max-width: 100%; white-space: normal; text-align: center; }
     .lb-image { max-width: 100%; }
 }
+
+
+/* ---------- Accessibility refinements ---------- */
+.form-honeypot {
+    position: absolute !important;
+    left: -10000px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+}
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--gold-light);
+    outline-offset: 3px;
+}
+@media (max-width: 650px) {
+    .nav-links a, nav ul a { min-height: 44px; }
+    .catalog-filter { min-height: 44px; }
+}

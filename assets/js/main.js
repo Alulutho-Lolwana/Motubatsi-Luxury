@@ -5,9 +5,24 @@ document.addEventListener('DOMContentLoaded', function () {
     var links = document.querySelector('.nav-links');
 
     if (toggle && links) {
-        toggle.addEventListener('click', function () {
-            var isOpen = links.classList.toggle('open');
+        function setNavigationOpen(isOpen) {
+            links.classList.toggle('open', isOpen);
             toggle.setAttribute('aria-expanded', String(isOpen));
+        }
+
+        toggle.addEventListener('click', function () {
+            setNavigationOpen(!links.classList.contains('open'));
+        });
+
+        links.addEventListener('click', function (event) {
+            if (event.target.closest('a')) setNavigationOpen(false);
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && links.classList.contains('open')) {
+                setNavigationOpen(false);
+                toggle.focus();
+            }
         });
     }
 
