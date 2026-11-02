@@ -1,0 +1,3 @@
+# Motubatsi Luxury — crawler instructions
+User-agent: *
+Allow: /
