@@ -389,19 +389,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
             try {
                 var formData = new FormData(form);
-                formData.append('access_key', '2a40792c-0ace-4895-9a68-4a59562f3963');
                 var response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
-                    body: formData,
-                    mode: 'cors',
-                    credentials: 'omit',
-                    redirect: 'error',
-                    referrerPolicy: 'strict-origin-when-cross-origin',
-                    headers: { 'Accept': 'application/json' }
+                    headers: { 'Accept': 'application/json' },
+                    body: formData
                 });
-                var result = await response.json();
+                var result;
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    throw new Error('The form service returned an unreadable response. Please try again.');
+                }
                 if (!response.ok || result.success !== true) {
-                    throw new Error(result.message || 'The form service could not accept your message.');
+                    var serviceMessage = result.message ||
+                        (result.body && result.body.message) ||
+                        result.error ||
+                        'The form service could not accept your message (HTTP ' + response.status + ').';
+                    throw new Error(serviceMessage);
                 }
                 form.reset();
                 fields().forEach(clearError);
@@ -411,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 status.className = 'form-status is-success';
                 status.focus();
             } catch (error) {
-                status.textContent = 'We could not submit your message. Please try again, or email info@Motubatsi.com directly. Your message has not been confirmed as sent.';
+                status.textContent = 'Unable to send: ' + (error && error.message ? error.message : 'Please try again later.');
                 status.className = 'form-status is-error';
                 status.focus();
             } finally {
