@@ -1880,3 +1880,12 @@ body.lightbox-open {
 @media(max-width:700px){.site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.site-footer .footer-brand{grid-column:1/-1}}
 @media(max-width:420px){.site-footer .footer-grid{grid-template-columns:1fr}.site-footer .footer-brand{grid-column:auto}.site-footer .footer-bottom{align-items:flex-start;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){.skip-link,.site-footer .footer-links a,.back-to-top{transition:none!important}#top{scroll-behavior:auto}}
+
+
+/* Brand mark beside the wordmark */
+.brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+.brand-logo { display: block; width: 42px; height: 42px; flex: 0 0 42px; object-fit: contain; border-radius: 50%; }
+@media (max-width: 480px) {
+  .brand { gap: 0.45rem; }
+  .brand-logo { width: 34px; height: 34px; flex-basis: 34px; }
+}
